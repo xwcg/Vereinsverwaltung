@@ -1,0 +1,547 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="dfe02aca-5adf-4dfa-bd15-d9a1ee49e331" name="SerWalter" linkedPackageId="eb9a3442-713e-4105-9c60-f223e6318985" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <packagedElements>
+    <packageHasNamedElement>
+      <referencedType Id="9aa69a6d-fb65-4973-b756-4aa66ab169de" name="CostModifier" isAbstract="false" isLeaf="false" cachedFullName="SerWalterDiagramm::Package1::CostModifier">
+        <elementDefinition Id="1bb34a21-4b11-45d3-a5ae-c77908dea162" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="c387c455-b5fd-475d-b7cd-a7fd970c3b8b" name="Payment" isAbstract="false" isLeaf="false" cachedFullName="SerWalterDiagramm::Package1::Payment">
+        <elementDefinition Id="6df29272-7eca-4378-9d53-6abae7863a2c" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="1cfd32a5-6693-4738-bc84-c3fe5264ab5f" name="Invoice" isAbstract="false" isLeaf="false" cachedFullName="SerWalterDiagramm::Package1::Invoice">
+        <elementDefinition Id="49b2e293-2689-44ea-bd74-9404ccd3cc1f" />
+      </referencedType>
+    </packageHasNamedElement>
+    <logicalClassDesignerModelHasPackages>
+      <package Id="e2d548be-8705-4fd8-9a8f-1ae7270a583b" name="Data">
+        <elementDefinition Id="11b1415e-dc15-4fe3-91f2-c5031e5a4746" />
+        <packagedElements>
+          <packageHasNamedElement>
+            <class Id="4fa29dcb-f0f4-49cb-a650-035f51d40d4e" name="Member" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="60d53474-5a32-42d9-9e40-2a2aaad0d2d3" />
+              <generalsInternal>
+                <generalization Id="ccfb2c6c-2596-4ca2-861f-bd5e49001060" isSubstitutable="false">
+                  <classMoniker Id="7ad75844-bb05-4118-b20d-9139ddd4d6cf" LastKnownName="DBObject" />
+                  <elementDefinition Id="dff527f5-4a49-472f-b8bd-a4f6c3eaf2cd" />
+                </generalization>
+              </generalsInternal>
+              <ownedAttributesInternal>
+                <property Id="b780e86b-3a15-45f9-a41f-567f70092a97" name="first_name" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="b1df3772-c1f1-4e00-b72f-14acbb369f34" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="d9becc9e-79b3-4c25-a6ae-e4377d8b4b38" LastKnownName="String" />
+                  </type_NamedElement>
+                </property>
+                <property Id="447b5131-01d9-4506-b62a-e189117d8d08" name="last_name" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="4d3a8395-c43c-4cae-a0f4-c0e6b8e47aac" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="2ff6ab54-effd-4e81-a517-9b017abe7858" LastKnownName="String" />
+                  </type_NamedElement>
+                </property>
+                <property Id="55e34336-5e63-45a3-bc9b-aad5ba136c63" name="dob" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="d4c732a4-8121-477f-a58a-ea6bc2f61f26" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="c1252317-c669-4c27-9473-36ada55c82f4" LastKnownName="DateTime" />
+                  </type_NamedElement>
+                </property>
+                <property Id="fde5836b-eab2-48a0-ade2-042ef7c9f5ac" name="street" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="b8955da0-a345-4fb8-86de-28bf2ca47762" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="532b3531-edfd-486d-b531-724577b13307" LastKnownName="String" />
+                  </type_NamedElement>
+                </property>
+                <property Id="0fba23c2-110e-49c6-abe5-1c07593dc39b" name="zipcode" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="4349afca-5b57-480f-bd62-7569fee7846e" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="28bc4945-7bb0-414f-9b49-e7f85f38698f" LastKnownName="String" />
+                  </type_NamedElement>
+                </property>
+                <property Id="67450843-5b92-4f72-8489-18aedd56e323" name="city" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="7f94769e-81a4-461f-8567-454e490fef5f" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="d597374c-dec1-4833-9fed-1cedb6b4aced" LastKnownName="String" />
+                  </type_NamedElement>
+                </property>
+                <property Id="38d3a69c-9f87-48a9-b6d8-e3cc00cf0376" name="country" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="feba97d6-37dc-4f13-9569-0d080902656c" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="24461fda-6475-4af7-b970-b35c8ffe7db1" LastKnownName="String" />
+                  </type_NamedElement>
+                </property>
+                <property Id="f963e75d-8553-4499-9cc8-c85bd0cca429" name="job_name" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="5cbe4c8a-7bbb-4787-aeb0-0b6265438771" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="23b74f23-0ba4-44d1-8c0a-504cab970cc3" LastKnownName="String" />
+                  </type_NamedElement>
+                </property>
+                <property Id="2d0ec238-9ff3-4c81-8c81-4b077f06405d" name="job_type" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="6b5d0646-6f64-47a1-a993-0f81af20172a" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="654313a1-41f1-48e7-beae-c0cc8cecb87c" LastKnownName="Job" />
+                  </type_NamedElement>
+                </property>
+                <property Id="6af3928b-8938-41b3-a613-d98c35a09282" name="bank_account" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="0bc55881-98a3-4f42-9a5b-c0b8356ec9b1" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="ae7e1a8f-fe60-42e9-9127-2adb4aded585" LastKnownName="BankAccount" />
+                  </type_NamedElement>
+                </property>
+                <property Id="df3d72a5-a3f2-4eaa-ab07-2748e269520f" name="bank_is_sepa" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="804c45d7-d761-4d5c-a675-9bb3573704d7" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="04de9b3f-cc9e-4d40-bca7-dfc14c05bd84" LastKnownName="Boolean" />
+                  </type_NamedElement>
+                </property>
+              </ownedAttributesInternal>
+              <ownedOperationsInternal>
+                <operation Id="fc91e533-6907-4a1b-9f03-89dfce13e683" name="CreateInvoice" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="b6e22a8a-8370-4ddd-a6fb-0f165af2f420" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="e4346052-882d-4cff-9a4a-165a56853eca" direction="Return">
+                        <elementDefinition Id="bea8ac45-c791-4cbc-9c16-876f24f841f0" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="1cfd32a5-6693-4738-bc84-c3fe5264ab5f" LastKnownName="Invoice" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+              </ownedOperationsInternal>
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="03c2c04f-83db-4ce6-a171-c793e38aba98" name="BankAccount" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="86e7d198-353e-4fbf-8f73-e6d092881883" />
+              <generalsInternal>
+                <generalization Id="f9f92779-1c2d-4287-bc58-52f804f4078d" isSubstitutable="false">
+                  <classMoniker Id="7ad75844-bb05-4118-b20d-9139ddd4d6cf" LastKnownName="DBObject" />
+                  <elementDefinition Id="4960012f-282d-4a7a-8945-0c0594d2f28b" />
+                </generalization>
+              </generalsInternal>
+              <ownedAttributesInternal>
+                <property Id="dd0917b6-db35-43fc-b4a9-f70aabbe3846" name="iban" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="570f3707-7aac-405d-82b6-5f61697a9f02" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="4d959e5f-1989-4dff-b85c-bb4e20d59962" LastKnownName="String" />
+                  </type_NamedElement>
+                </property>
+                <property Id="7bc78796-5045-4495-a083-3172c457fd86" name="bic" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="99b8739a-7452-4d03-8471-72854bb48164" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="c8883cf5-2cd9-424c-82bd-c0867c95eb5b" LastKnownName="String" />
+                  </type_NamedElement>
+                </property>
+                <property Id="f56060cc-7360-4556-b76e-592232eee13c" name="institute_name" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="d00c376a-7177-4e6c-9243-cf677fcb46e1" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="9bf83166-6a47-42f1-835a-656603a6aba1" LastKnownName="String" />
+                  </type_NamedElement>
+                </property>
+                <property Id="b7969e83-9e1b-4aa0-b9db-a377087392f4" name="holder_name" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="d1e6371c-6c49-4fd6-92c4-f3000e83c286" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="0eb74450-ac24-4d09-973f-4f854d9cb57a" LastKnownName="String" />
+                  </type_NamedElement>
+                </property>
+              </ownedAttributesInternal>
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="2260afa9-b71a-4f6a-a7c0-ee37928c3e51" name="Invoice" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="49b2e293-2689-44ea-bd74-9404ccd3cc1f" />
+              <generalsInternal>
+                <generalization Id="9a2d1277-5a81-48bd-8755-66ea068f9eba" isSubstitutable="false">
+                  <classMoniker Id="7ad75844-bb05-4118-b20d-9139ddd4d6cf" LastKnownName="DBObject" />
+                  <elementDefinition Id="77b1086c-0ffe-4bf2-b352-0da73364b549" />
+                </generalization>
+              </generalsInternal>
+              <ownedAttributesInternal>
+                <property Id="7f9a62eb-2349-4218-935f-2ace72cf3934" name="member" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="40bd8d67-f24b-4f3e-8d61-69d867ba6152" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="fb0dc6e4-2e81-4427-aca2-d86eb7d5b913" LastKnownName="Member" />
+                  </type_NamedElement>
+                </property>
+                <property Id="61e17313-cf37-46e4-af6a-f8506a1ad60c" name="age_modifier" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="62335e88-45ff-4b17-b74f-28fd97ee3ee6" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="05f59b31-3ada-4bfb-a52a-d2a1b8e12d60" LastKnownName="CostModifier" />
+                  </type_NamedElement>
+                </property>
+                <property Id="4a3558fe-3bff-4c35-9cb5-244d7ac08d39" name="job_modifier" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="c5af107e-9ce0-4ccc-8a74-f55388294073" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="f17e707e-9f42-4e84-916a-e6c241e1e377" LastKnownName="CostModifier" />
+                  </type_NamedElement>
+                </property>
+                <property Id="05b595ff-d5b3-47b3-a16e-a551d184bd20" name="date" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="61c1b951-0c8a-458f-967a-259f52cd03e3" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="d5919c8b-8da2-4a92-b772-aeb8d5ca7ff0" LastKnownName="DateTime" />
+                  </type_NamedElement>
+                </property>
+                <property Id="ffa13080-aa4b-424c-b147-73224eebcc84" name="calculated_cost" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="d16b8bae-ab0e-4464-86d0-7b6741a39262" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="66dac4b7-fc07-48e1-a1a3-b77f9f72b9c4" LastKnownName="Decimal" />
+                  </type_NamedElement>
+                </property>
+                <property Id="4c2cdd61-8067-4a12-9f5a-43d61458c16e" name="paid_cost" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="fa424270-cbed-4bae-8e09-23e8b5da6a3e" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="7de32bc1-8fee-4434-bf1d-312cdc941706" LastKnownName="Decimal" />
+                  </type_NamedElement>
+                </property>
+                <property Id="d1ad561d-a4e4-4f05-980a-55472a320b38" name="is_fee" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="3c35fb87-fc64-4e7e-aeff-90d4981dae45" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="867db692-87e9-4417-9c83-d28a061a7d16" LastKnownName="Boolean" />
+                  </type_NamedElement>
+                </property>
+              </ownedAttributesInternal>
+              <ownedOperationsInternal>
+                <operation Id="fe88790c-a047-428f-accd-f877f71058db" name="Pay" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="e513a8d8-8fc1-4c59-9591-b8d94af4c7e1" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="17fe8aa5-0265-4961-8fe9-5d4bb2c644bc" name="payment" direction="In">
+                        <elementDefinition Id="79829b7f-76f0-4165-b6ab-c40dbb435645" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="c387c455-b5fd-475d-b7cd-a7fd970c3b8b" LastKnownName="Payment" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+              </ownedOperationsInternal>
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="2d1eb8e4-45cf-4710-8917-52ed090267e5" name="Payment" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="6df29272-7eca-4378-9d53-6abae7863a2c" />
+              <generalsInternal>
+                <generalization Id="32f03b44-b60e-4aa8-a31d-5eb34d4b21ee" isSubstitutable="false">
+                  <classMoniker Id="7ad75844-bb05-4118-b20d-9139ddd4d6cf" LastKnownName="DBObject" />
+                  <elementDefinition Id="6b686b47-05cd-4dcb-b39d-de4e5185c5ab" />
+                </generalization>
+              </generalsInternal>
+              <ownedAttributesInternal>
+                <property Id="dc414eec-2bad-4c81-b23f-c5a43deffee3" name="date" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="4b4afabe-ef70-4df0-81f6-85a6f916e12f" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="a3e689a7-40b6-4e77-aa6a-b15a9c3b4e0a" LastKnownName="DateTime" />
+                  </type_NamedElement>
+                </property>
+                <property Id="1f0435f4-8e2d-4d27-90ad-abfc916b9915" name="invoice" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="3767bf88-7072-410d-994c-e5bb6510c05b" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="3167a6c3-fe40-41e6-9ec4-c7d05dd46515" LastKnownName="Invoice" />
+                  </type_NamedElement>
+                </property>
+                <property Id="e1e7a929-6473-4544-909d-62bf9279c748" name="bank" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="7c854ade-ce83-42d0-8f45-77a02a8524b3" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="dc3e7744-803d-46cb-af68-686b875382f1" LastKnownName="BankAccount" />
+                  </type_NamedElement>
+                </property>
+                <property Id="60397e5d-b3f4-4dc0-85ae-2f7822e268db" name="bank_was_sepa" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="d544fc7b-5654-4d78-9e36-3dab99f588b8" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="efb16ab2-fa2a-45d7-97fa-fec80e03ce6f" LastKnownName="Boolean" />
+                  </type_NamedElement>
+                </property>
+                <property Id="dc22b2b3-8969-4256-8606-8b34d911a35d" name="amount" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="233748f9-1852-40aa-adc4-8159f4a32a76" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="6f7853e6-22c6-4618-ab1a-f639d463f64f" LastKnownName="Decimal" />
+                  </type_NamedElement>
+                </property>
+              </ownedAttributesInternal>
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="15362361-680d-43ea-9127-314fefab3438" name="Job" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="5e651031-d4ec-4591-8063-a3a581486b1e" />
+              <generalsInternal>
+                <generalization Id="73ba4ea0-c392-4f74-922d-392228abfb0a" isSubstitutable="false">
+                  <classMoniker Id="7ad75844-bb05-4118-b20d-9139ddd4d6cf" LastKnownName="DBObject" />
+                  <elementDefinition Id="e469ebf1-193e-4166-af88-976bc981e3c0" />
+                </generalization>
+              </generalsInternal>
+              <ownedAttributesInternal>
+                <property Id="fa3bc511-7bba-4e9e-b38a-668f6d9a3929" name="modifier" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="a002fa7c-5fac-4b76-a5b2-710aa2eb175a" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="9aa69a6d-fb65-4973-b756-4aa66ab169de" LastKnownName="CostModifier" />
+                  </type_NamedElement>
+                </property>
+                <property Id="d29cbe2c-5e53-4ca9-857c-19ab8013f934" name="name" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="68e8e756-d9ae-4f8c-80fd-6902a3f9dba3" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="faf4c239-5b67-482b-b093-260cddbd09f2" LastKnownName="String" />
+                  </type_NamedElement>
+                </property>
+              </ownedAttributesInternal>
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="5265d87a-6e04-43fe-a84f-2643c9732c60" name="CostModifier" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="1bb34a21-4b11-45d3-a5ae-c77908dea162" />
+              <generalsInternal>
+                <generalization Id="8cf7d7b7-4c4c-4a2c-9c0c-e9717ae1d726" isSubstitutable="false">
+                  <classMoniker Id="7ad75844-bb05-4118-b20d-9139ddd4d6cf" LastKnownName="DBObject" />
+                  <elementDefinition Id="68a09fde-fece-4bcf-8e97-b750e513b0ce" />
+                </generalization>
+              </generalsInternal>
+              <ownedAttributesInternal>
+                <property Id="ad2f488e-884c-45f1-b85e-1f09822a91f1" name="increaseFixed" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="4ac62314-1b38-4fd5-ac77-0a132d76aeeb" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="a6344395-38cf-43da-988a-be504bb70a62" LastKnownName="Decimal" />
+                  </type_NamedElement>
+                </property>
+                <property Id="eb0da38b-d0d0-4bd8-8fc2-3a769e6fb2b3" name="increasePercent" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="b2583625-4d82-462d-88a5-8d129c4deb67" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="86c3c0bf-1377-4da2-b99a-0ab9494d8ea1" LastKnownName="Double" />
+                  </type_NamedElement>
+                </property>
+                <property Id="a4a7cdd2-1135-422e-baea-a0cefa845d18" name="decreaseFixed" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="d610baf5-0c1f-4b3b-a7b2-93d24ef956e6" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="d6cb6662-6008-4a3b-bc8b-5aca67e06fe5" LastKnownName="Decimal" />
+                  </type_NamedElement>
+                </property>
+                <property Id="a1dc28bc-30d4-4187-948a-1314940f42ed" name="decreasePercent" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="af1f6472-f5bf-4d71-b7ff-2be5c4248832" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="0a01febd-bb2e-4b07-84f8-6297df81c5cc" LastKnownName="Double" />
+                  </type_NamedElement>
+                </property>
+              </ownedAttributesInternal>
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="7ad75844-bb05-4118-b20d-9139ddd4d6cf" name="DBObject" isAbstract="true" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="fab9f4bf-d462-4648-8fc5-ccfbfe35d11f" />
+              <ownedAttributesInternal>
+                <property Id="bf7796e6-d011-4121-a681-acc51845abba" name="id" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="b1fb9188-e88b-4ca1-bf38-2e04b61e69d5" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="54e6b692-bae9-4d1a-9e19-59891bfef093" LastKnownName="Integer" />
+                  </type_NamedElement>
+                </property>
+                <property Id="e192cef2-7ada-435b-89ff-ca760dea8169" name="objectType" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="a9fd7f81-219f-4d36-bb3a-0b5ae8be9bcc" />
+                </property>
+              </ownedAttributesInternal>
+              <ownedOperationsInternal>
+                <operation Id="301cd2b5-9ec4-4803-924c-0f2f5f3fa8c0" name="Pull" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="8dd57032-dce4-466f-9ba7-e9eed62e5fd5" />
+                </operation>
+                <operation Id="27321edf-1d69-487b-93a3-7029cc7a95c6" name="Push" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="7dc03798-4931-47e0-9a77-25f8651790fa" />
+                </operation>
+                <operation Id="617f62d9-9f54-4046-b3ff-2dd99eb62c91" name="TryDelete" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="4ee0d613-8c11-4229-acb4-be7289af8b3c" />
+                </operation>
+              </ownedOperationsInternal>
+            </class>
+          </packageHasNamedElement>
+        </packagedElements>
+      </package>
+    </logicalClassDesignerModelHasPackages>
+    <logicalClassDesignerModelHasPackages>
+      <package Id="177f5440-7dce-4ef5-b199-60efb862c014" name="FinanceManager">
+        <elementDefinition Id="d75ec50d-e569-4772-91e9-43551cf98d90" />
+      </package>
+    </logicalClassDesignerModelHasPackages>
+    <packageHasNamedElement>
+      <referencedType Id="faf4c239-5b67-482b-b093-260cddbd09f2" name="String" isAbstract="false" isLeaf="false" cachedFullName="String">
+        <elementDefinition Id="59259974-6d55-42c6-b7bd-763d77ac8ef9" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="54e6b692-bae9-4d1a-9e19-59891bfef093" name="Integer" isAbstract="false" isLeaf="false" cachedFullName="Integer">
+        <elementDefinition Id="220a3521-e091-4221-bae9-3ef9018e845c" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="654313a1-41f1-48e7-beae-c0cc8cecb87c" name="Job" isAbstract="false" isLeaf="false" cachedFullName="SerWalterDiagramm::Data::Job">
+        <elementDefinition Id="5e651031-d4ec-4591-8063-a3a581486b1e" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="2ff6ab54-effd-4e81-a517-9b017abe7858" name="String" isAbstract="false" isLeaf="false" cachedFullName="String">
+        <elementDefinition Id="59259974-6d55-42c6-b7bd-763d77ac8ef9" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="532b3531-edfd-486d-b531-724577b13307" name="String" isAbstract="false" isLeaf="false" cachedFullName="String">
+        <elementDefinition Id="59259974-6d55-42c6-b7bd-763d77ac8ef9" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="28bc4945-7bb0-414f-9b49-e7f85f38698f" name="String" isAbstract="false" isLeaf="false" cachedFullName="String">
+        <elementDefinition Id="59259974-6d55-42c6-b7bd-763d77ac8ef9" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="23b74f23-0ba4-44d1-8c0a-504cab970cc3" name="String" isAbstract="false" isLeaf="false" cachedFullName="String">
+        <elementDefinition Id="59259974-6d55-42c6-b7bd-763d77ac8ef9" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="d9becc9e-79b3-4c25-a6ae-e4377d8b4b38" name="String" isAbstract="false" isLeaf="false" cachedFullName="String">
+        <elementDefinition Id="59259974-6d55-42c6-b7bd-763d77ac8ef9" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="c1252317-c669-4c27-9473-36ada55c82f4" name="DateTime" isAbstract="false" isLeaf="false" cachedFullName="DateTime">
+        <elementDefinition Id="129e6593-d568-43b9-8f1c-31aacfedc2e7" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="04de9b3f-cc9e-4d40-bca7-dfc14c05bd84" name="Boolean" isAbstract="false" isLeaf="false" cachedFullName="Boolean">
+        <elementDefinition Id="8943dc84-709e-4f62-b15a-a3273aa6f165" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="d597374c-dec1-4833-9fed-1cedb6b4aced" name="String" isAbstract="false" isLeaf="false" cachedFullName="String">
+        <elementDefinition Id="59259974-6d55-42c6-b7bd-763d77ac8ef9" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="24461fda-6475-4af7-b970-b35c8ffe7db1" name="String" isAbstract="false" isLeaf="false" cachedFullName="String">
+        <elementDefinition Id="59259974-6d55-42c6-b7bd-763d77ac8ef9" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="ae7e1a8f-fe60-42e9-9127-2adb4aded585" name="BankAccount" isAbstract="false" isLeaf="false" cachedFullName="SerWalterDiagramm::Data::BankAccount">
+        <elementDefinition Id="86e7d198-353e-4fbf-8f73-e6d092881883" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="867db692-87e9-4417-9c83-d28a061a7d16" name="Boolean" isAbstract="false" isLeaf="false" cachedFullName="Boolean">
+        <elementDefinition Id="8943dc84-709e-4f62-b15a-a3273aa6f165" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="7de32bc1-8fee-4434-bf1d-312cdc941706" name="Decimal" isAbstract="false" isLeaf="false" cachedFullName="Decimal">
+        <elementDefinition Id="25d5bc10-391d-48bb-88c9-fb79f276a82e" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="66dac4b7-fc07-48e1-a1a3-b77f9f72b9c4" name="Decimal" isAbstract="false" isLeaf="false" cachedFullName="Decimal">
+        <elementDefinition Id="25d5bc10-391d-48bb-88c9-fb79f276a82e" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="d5919c8b-8da2-4a92-b772-aeb8d5ca7ff0" name="DateTime" isAbstract="false" isLeaf="false" cachedFullName="DateTime">
+        <elementDefinition Id="129e6593-d568-43b9-8f1c-31aacfedc2e7" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="fb0dc6e4-2e81-4427-aca2-d86eb7d5b913" name="Member" isAbstract="false" isLeaf="false" cachedFullName="SerWalterDiagramm::Data::Member">
+        <elementDefinition Id="60d53474-5a32-42d9-9e40-2a2aaad0d2d3" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="f17e707e-9f42-4e84-916a-e6c241e1e377" name="CostModifier" isAbstract="false" isLeaf="false" cachedFullName="SerWalterDiagramm::Data::CostModifier">
+        <elementDefinition Id="1bb34a21-4b11-45d3-a5ae-c77908dea162" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="05f59b31-3ada-4bfb-a52a-d2a1b8e12d60" name="CostModifier" isAbstract="false" isLeaf="false" cachedFullName="SerWalterDiagramm::Data::CostModifier">
+        <elementDefinition Id="1bb34a21-4b11-45d3-a5ae-c77908dea162" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="d6cb6662-6008-4a3b-bc8b-5aca67e06fe5" name="Decimal" isAbstract="false" isLeaf="false" cachedFullName="Decimal">
+        <elementDefinition Id="25d5bc10-391d-48bb-88c9-fb79f276a82e" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="a6344395-38cf-43da-988a-be504bb70a62" name="Decimal" isAbstract="false" isLeaf="false" cachedFullName="Decimal">
+        <elementDefinition Id="25d5bc10-391d-48bb-88c9-fb79f276a82e" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="0a01febd-bb2e-4b07-84f8-6297df81c5cc" name="Double" isAbstract="false" isLeaf="false" cachedFullName="Double">
+        <elementDefinition Id="deb61964-f613-4547-befe-18da8a23fbe9" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="86c3c0bf-1377-4da2-b99a-0ab9494d8ea1" name="Double" isAbstract="false" isLeaf="false" cachedFullName="Double">
+        <elementDefinition Id="deb61964-f613-4547-befe-18da8a23fbe9" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="a3e689a7-40b6-4e77-aa6a-b15a9c3b4e0a" name="DateTime" isAbstract="false" isLeaf="false" cachedFullName="DateTime">
+        <elementDefinition Id="129e6593-d568-43b9-8f1c-31aacfedc2e7" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="6f7853e6-22c6-4618-ab1a-f639d463f64f" name="Decimal" isAbstract="false" isLeaf="false" cachedFullName="Decimal">
+        <elementDefinition Id="25d5bc10-391d-48bb-88c9-fb79f276a82e" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="efb16ab2-fa2a-45d7-97fa-fec80e03ce6f" name="Boolean" isAbstract="false" isLeaf="false" cachedFullName="Boolean">
+        <elementDefinition Id="8943dc84-709e-4f62-b15a-a3273aa6f165" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="dc3e7744-803d-46cb-af68-686b875382f1" name="BankAccount" isAbstract="false" isLeaf="false" cachedFullName="SerWalterDiagramm::Data::BankAccount">
+        <elementDefinition Id="86e7d198-353e-4fbf-8f73-e6d092881883" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="3167a6c3-fe40-41e6-9ec4-c7d05dd46515" name="Invoice" isAbstract="false" isLeaf="false" cachedFullName="SerWalterDiagramm::Data::Invoice">
+        <elementDefinition Id="49b2e293-2689-44ea-bd74-9404ccd3cc1f" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="c8883cf5-2cd9-424c-82bd-c0867c95eb5b" name="String" isAbstract="false" isLeaf="false" cachedFullName="String">
+        <elementDefinition Id="59259974-6d55-42c6-b7bd-763d77ac8ef9" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="0eb74450-ac24-4d09-973f-4f854d9cb57a" name="String" isAbstract="false" isLeaf="false" cachedFullName="String">
+        <elementDefinition Id="59259974-6d55-42c6-b7bd-763d77ac8ef9" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="4d959e5f-1989-4dff-b85c-bb4e20d59962" name="String" isAbstract="false" isLeaf="false" cachedFullName="String">
+        <elementDefinition Id="59259974-6d55-42c6-b7bd-763d77ac8ef9" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="9bf83166-6a47-42f1-835a-656603a6aba1" name="String" isAbstract="false" isLeaf="false" cachedFullName="String">
+        <elementDefinition Id="59259974-6d55-42c6-b7bd-763d77ac8ef9" />
+      </referencedType>
+    </packageHasNamedElement>
+  </packagedElements>
+  <package Id="eb9a3442-713e-4105-9c60-f223e6318985" name="SerWalterDiagramm">
+    <elementDefinition Id="d0311e86-98b8-4548-a4ad-c3470af0494f" />
+    <profileInstances>
+      <packageHasProfileInstances Id="088bd6be-4ab7-4db6-91b3-c57771d1a321">
+        <profileInstance Id="8c237bd4-26aa-4677-baad-4a9429e13cd0" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="86ccc529-3249-4fbc-be35-db43236bdd51">
+        <profileInstance Id="1984555a-f0e9-44de-87b4-68bd59126e4d" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
+  </package>
+</logicalClassDesignerModel>
