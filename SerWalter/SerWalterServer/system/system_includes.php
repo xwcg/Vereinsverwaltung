@@ -6,6 +6,7 @@ define("TABLE_MEMBERS", "member");
 define("TABLE_MODIFIERS", "modifier");
 define("TABLE_INVOICES", "invoices");
 define("TABLE_PAYMENTS", "payments");
+define("TABLE_USERS", "users");
 
 require_once("classes/helper.class.php"); // Load Helper Class
 require_once("classes/db.class.php"); // Load Database Class

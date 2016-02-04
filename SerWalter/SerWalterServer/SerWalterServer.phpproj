@@ -15,6 +15,7 @@
     <IncludeDebugInformation>false</IncludeDebugInformation>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="index.php" />
     <Compile Include="system\classes\db.class.php" />
     <Compile Include="system\classes\helper.class.php" />
     <Compile Include="system\include.php" />
