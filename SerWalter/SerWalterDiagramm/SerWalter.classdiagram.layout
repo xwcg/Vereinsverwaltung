@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<logicalClassDesignerDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 14.125, 8.5" name="SerWalter">
+<logicalClassDesignerDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="SerWalter">
   <logicalClassDesignerModelMoniker Id="dfe02aca-5adf-4dfa-bd15-d9a1ee49e331" />
   <nestedChildShapes>
     <packageShape Id="04d46a4b-2161-44cd-9d87-5b8fbd5c3d73" absoluteBounds="0.5, 0.625, 8, 7" customColor="255, 249, 230" hideQualifiedName="false">
@@ -56,10 +56,7 @@
         </classShape>
       </nestedChildShapes>
     </packageShape>
-    <packageShape Id="b0444a11-b117-4e86-bad6-1c36f38f4649" absoluteBounds="10, 0.625, 3.875, 4.625" customColor="255, 249, 230" hideQualifiedName="false">
-      <packageMoniker Id="177f5440-7dce-4ef5-b199-60efb862c014" LastKnownName="FinanceManager" />
-    </packageShape>
-    <generalizationConnector edgePoints="[(3.125 : 3.72656248013179); (3.5 : 3.72656248013179)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="113, 111, 110">
+    <generalizationConnector edgePoints="[(3.125 : 3.72656248013179); (3.5 : 3.72656248013179)]" fixedFrom="NotFixed" fixedTo="NotFixed" customColor="113, 111, 110">
       <generalizationMoniker Id="ccfb2c6c-2596-4ca2-861f-bd5e49001060" />
       <relativeChildShapes />
       <nodes>
@@ -99,7 +96,7 @@
         <classShapeMoniker Id="bc3ee5c4-6f58-4977-8fb7-ee7af0ec33d0" />
       </nodes>
     </generalizationConnector>
-    <generalizationConnector edgePoints="[(5.875 : 3.52148435761531); (5 : 3.52148435761531)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="113, 111, 110">
+    <generalizationConnector edgePoints="[(5.875 : 3.52148435761531); (5 : 3.52148435761531)]" fixedFrom="NotFixed" fixedTo="NotFixed" customColor="113, 111, 110">
       <generalizationMoniker Id="8cf7d7b7-4c4c-4a2c-9c0c-e9717ae1d726" />
       <relativeChildShapes />
       <nodes>

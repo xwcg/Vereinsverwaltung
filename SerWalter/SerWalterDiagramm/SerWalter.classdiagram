@@ -356,11 +356,6 @@
         </packagedElements>
       </package>
     </logicalClassDesignerModelHasPackages>
-    <logicalClassDesignerModelHasPackages>
-      <package Id="177f5440-7dce-4ef5-b199-60efb862c014" name="FinanceManager">
-        <elementDefinition Id="d75ec50d-e569-4772-91e9-43551cf98d90" />
-      </package>
-    </logicalClassDesignerModelHasPackages>
     <packageHasNamedElement>
       <referencedType Id="faf4c239-5b67-482b-b093-260cddbd09f2" name="String" isAbstract="false" isLeaf="false" cachedFullName="String">
         <elementDefinition Id="59259974-6d55-42c6-b7bd-763d77ac8ef9" />
