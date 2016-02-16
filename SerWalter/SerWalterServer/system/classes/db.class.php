@@ -241,6 +241,21 @@ class DatabaseQueries
 
     #endregion
 
+    private function Check_JobType($id)
+    {   
+        $query = H::FormatArr("SELECT * FROM {PREFIX}{TABLE} WHERE id = '{ID}' LIMIT 1",
+            [
+                "PREFIX" => DBPREFIX,
+                "TABLE" => TABLE_JOBS,
+                "ID" => $this->Escape($id)
+            ]);
+
+        $result = Globals::$db->Query($query);
+        $rows = $this->Unspool($result, null, []);
+       
+        return count($rows) > 0;
+    }
+
     public function CheckUser($username, $password)
     {
         $query = H::FormatArr("SELECT * FROM {PREFIX}{TABLE} WHERE username = '{USERNAME}'",
@@ -263,6 +278,36 @@ class DatabaseQueries
         }
 
         return false;
+    }
+
+    public function Member_Add($data)
+    {
+        /*
+         * first_name
+         * last_name
+         * dob
+         * street
+         * zipcode
+         * city
+         * country
+         * job_name
+         * job_type
+         * bank_account
+         * bank_is_sepa
+         */
+        if(!isset($data["first_name"]) || !isset($data["last_name"]) || !isset($data["dob"]) || !isset($data["street"])
+        || !isset($data["zipcode"]) || !isset($data["city"]) || !isset($data["country"]) || !isset($data["job_name"])
+        || !isset($data["job_type"]))
+            return "MISSING_MEMBER_DATA";
+
+        if($this->Check_JobType($data["job_type"]))
+        {
+
+        }
+        else
+        {
+            return "INVALID_JOB_TYPE";
+        }
     }
 }
 
