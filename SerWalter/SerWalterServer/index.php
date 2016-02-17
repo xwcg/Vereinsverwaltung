@@ -24,6 +24,8 @@ if(isset($cmd) && strlen($cmd) > 0)
     }
 }
 
+$response["debug-post"] = $_POST;
+
 ob_clean();
 echo json_encode($response);
 ob_end_flush();

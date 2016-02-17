@@ -50,6 +50,7 @@
             this.fieldIp.Name = "fieldIp";
             this.fieldIp.Size = new System.Drawing.Size(327, 20);
             this.fieldIp.TabIndex = 1;
+            this.fieldIp.Text = "192.168.0.22/walter";
             // 
             // buttonConnect
             // 
