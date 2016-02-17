@@ -6,84 +6,79 @@
 //------------------------------------------------------------------------------
 namespace SerWalterClient.Data
 {
-	using System;
-	using System.Collections.Generic;
-	using System.Linq;
-	using System.Text;
+    using System;
 
-	public class Member : DBObject
-	{
-		public virtual string first_name
-		{
-			get;
-			set;
-		}
+    public class Member : DBObject
+    {
+        public virtual string first_name
+        {
+            get;
+            set;
+        }
 
-		public virtual string last_name
-		{
-			get;
-			set;
-		}
+        public virtual string last_name
+        {
+            get;
+            set;
+        }
 
-		public virtual DateTime dob
-		{
-			get;
-			set;
-		}
+        public virtual DateTime dob
+        {
+            get;
+            set;
+        }
 
-		public virtual string street
-		{
-			get;
-			set;
-		}
+        public virtual string street
+        {
+            get;
+            set;
+        }
 
-		public virtual string zipcode
-		{
-			get;
-			set;
-		}
+        public virtual string zipcode
+        {
+            get;
+            set;
+        }
 
-		public virtual string city
-		{
-			get;
-			set;
-		}
+        public virtual string city
+        {
+            get;
+            set;
+        }
 
-		public virtual string country
-		{
-			get;
-			set;
-		}
+        public virtual string country
+        {
+            get;
+            set;
+        }
 
-		public virtual string job_name
-		{
-			get;
-			set;
-		}
+        public virtual string job_name
+        {
+            get;
+            set;
+        }
 
-		public virtual Job job_type
-		{
-			get;
-			set;
-		}
+        public virtual Job job_type
+        {
+            get;
+            set;
+        }
 
-		public virtual BankAccount bank_account
-		{
-			get;
-			set;
-		}
+        public virtual BankAccount bank_account
+        {
+            get;
+            set;
+        }
 
-		public virtual bool bank_is_sepa
-		{
-			get;
-			set;
-		}
+        public virtual bool bank_is_sepa
+        {
+            get;
+            set;
+        }
 
-		public virtual Invoice CreateInvoice()
-		{
-			throw new System.NotImplementedException();
-		}
-
-	}
+        public virtual Invoice CreateInvoice()
+        {
+            throw new System.NotImplementedException();
+        }
+    }
 }
-

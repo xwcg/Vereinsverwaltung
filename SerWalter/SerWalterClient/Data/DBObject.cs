@@ -8,9 +8,6 @@ namespace SerWalterClient.Data
 {
     using Newtonsoft.Json;
     using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
 
     public abstract class DBObject
     {
@@ -53,7 +50,5 @@ namespace SerWalterClient.Data
         {
             throw new System.NotImplementedException();
         }
-
     }
 }
-
