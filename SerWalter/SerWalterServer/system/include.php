@@ -1,7 +1,6 @@
 <?php
 
 if(!ob_start("ob_gzhandler")) ob_start(); else header("Content-Encoding: gzip");
-session_start();
 
 define("ROOT_PATH", substr(__DIR__, 0, -7)); // Get Root path for unified paths
 
