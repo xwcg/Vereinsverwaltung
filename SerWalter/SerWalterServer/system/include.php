@@ -12,6 +12,8 @@ define("DBPASS", "");
 define("DBNAME", "verein");
 define("DBPREFIX", "");
 
+define("MEMBERSHIP_COST", 30.00);
+
 //[SETTINGS:END]
 
 require_once("system_includes.php");
