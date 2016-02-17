@@ -8,15 +8,19 @@ namespace SerWalterClient.Data
 {
     using Newtonsoft.Json;
     using System;
-
+    using System.ComponentModel;
     public abstract class DBObject
     {
+        [DisplayName("Datensatz")]
+        [Browsable(false)]
         public virtual int id
         {
             get;
             set;
         }
 
+        [DisplayName("Datentyp")]
+        [Browsable(false)]
         public virtual string objectType
         {
             get
@@ -30,6 +34,7 @@ namespace SerWalterClient.Data
         }
 
         [NonSerialized]
+        [Browsable(false)]
         public string lastPushResponse;
 
         public virtual bool Push()

@@ -1,10 +1,15 @@
-﻿using System;
+﻿using SerWalterClient.Data;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
 using System.Windows.Forms;
 
 namespace SerWalterClient
 {
     public partial class Main : Form
     {
+        private BindingList<Member> members;
+
         public Main()
         {
             InitializeComponent();
@@ -32,6 +37,13 @@ namespace SerWalterClient
 
         private void InitializeData()
         {
+            List<Member> serverMembers = Network.Request.GetMembers();
+            if (serverMembers == null)
+                serverMembers = new List<Member>();
+
+            members = new BindingList<Member>(serverMembers);
+
+            dataGridMembers.DataSource = members;
         }
     }
 }

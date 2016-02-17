@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SerWalterClient.Network
 {
-    class SimplifiedResponse
+    partial class SimplifiedResponse
     {
         public bool success;
 

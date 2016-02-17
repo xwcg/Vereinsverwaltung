@@ -31,7 +31,7 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabMembers = new System.Windows.Forms.TabPage();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridMembers = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.buttonMemberInvoice = new System.Windows.Forms.Button();
             this.buttonMemberAdd = new System.Windows.Forms.Button();
@@ -69,7 +69,7 @@
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridMembers)).BeginInit();
             this.panel1.SuspendLayout();
             this.panelMemberDetails.SuspendLayout();
             this.SuspendLayout();
@@ -106,7 +106,7 @@
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.dataGridView1);
+            this.splitContainer1.Panel1.Controls.Add(this.dataGridMembers);
             this.splitContainer1.Panel1.Controls.Add(this.panel1);
             // 
             // splitContainer1.Panel2
@@ -116,17 +116,17 @@
             this.splitContainer1.SplitterDistance = 739;
             this.splitContainer1.TabIndex = 0;
             // 
-            // dataGridView1
+            // dataGridMembers
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 31);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(739, 641);
-            this.dataGridView1.TabIndex = 1;
+            this.dataGridMembers.AllowUserToAddRows = false;
+            this.dataGridMembers.AllowUserToDeleteRows = false;
+            this.dataGridMembers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridMembers.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridMembers.Location = new System.Drawing.Point(0, 31);
+            this.dataGridMembers.Name = "dataGridMembers";
+            this.dataGridMembers.ReadOnly = true;
+            this.dataGridMembers.Size = new System.Drawing.Size(739, 641);
+            this.dataGridMembers.TabIndex = 1;
             // 
             // panel1
             // 
@@ -442,7 +442,7 @@
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridMembers)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panelMemberDetails.ResumeLayout(false);
             this.panelMemberDetails.PerformLayout();
@@ -486,7 +486,7 @@
         private System.Windows.Forms.TextBox fieldBankAccountInfo;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.CheckBox filedIsSepa;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridMembers;
     }
 }
 

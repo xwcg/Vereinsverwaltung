@@ -63,6 +63,7 @@
     <Compile Include="Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
+    <Compile Include="Network\MembersResponse.cs" />
     <Compile Include="Network\ReferenceRequestObject.cs" />
     <Compile Include="Network\Request.cs" />
     <Compile Include="Network\SimplifiedResponse.cs" />

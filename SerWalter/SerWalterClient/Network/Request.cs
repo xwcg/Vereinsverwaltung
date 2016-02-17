@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using SerWalterClient.Data;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Net;
@@ -9,6 +10,12 @@ namespace SerWalterClient.Network
     internal class Request
     {
         public static string ServiceAddress;
+
+        public static List<Member> GetMembers()
+        {
+            MembersResponse response = JsonConvert.DeserializeObject<MembersResponse>(Send("pull/members", null));
+            return response.members;            
+        }
 
         public static string Send(string cmd, object data)
         {

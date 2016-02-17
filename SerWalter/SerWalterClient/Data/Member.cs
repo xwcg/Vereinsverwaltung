@@ -8,69 +8,80 @@ namespace SerWalterClient.Data
 {
     using Newtonsoft.Json;
     using System;
-
+    using System.ComponentModel;
     public class Member : DBObject
     {
+        [DisplayName("Vorname")]
         public virtual string first_name
         {
             get;
             set;
         }
 
+        [DisplayName("Nachname")]
         public virtual string last_name
         {
             get;
             set;
         }
 
+        [DisplayName("Geburtstag")]
         public virtual DateTime dob
         {
             get;
             set;
         }
 
+        [DisplayName("Straße")]
         public virtual string street
         {
             get;
             set;
         }
 
+        [DisplayName("PLZ")]
         public virtual string zipcode
         {
             get;
             set;
         }
 
+        [DisplayName("Stadt")]
         public virtual string city
         {
             get;
             set;
         }
 
+        [DisplayName("Land")]
         public virtual string country
         {
             get;
             set;
         }
 
+        [DisplayName("Beschäftigung")]
         public virtual string job_name
         {
             get;
             set;
         }
 
+        [Browsable(false)]
         public virtual Job job_type
         {
             get;
             set;
         }
 
+        [Browsable(false)]
         public virtual BankAccount bank_account
         {
             get;
             set;
         }
 
+        [DisplayName("Zahlt per Lastschrift")]
         public virtual bool bank_is_sepa
         {
             get;
@@ -81,6 +92,11 @@ namespace SerWalterClient.Data
         {
             this.lastPushResponse = Network.Request.Send("invoice", new Network.ReferenceRequestObject(this));
             throw new NotImplementedException();
+        }
+
+        public override string ToString()
+        {
+            return String.Format("[{0}] {1} {2}", this.id, this.first_name, this.last_name);
         }
     }
 }
