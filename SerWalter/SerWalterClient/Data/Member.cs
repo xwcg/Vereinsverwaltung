@@ -80,7 +80,7 @@ namespace SerWalterClient.Data
         public virtual Invoice CreateInvoice()
         {
             this.lastPushResponse = Network.Request.Send("invoice", new Network.ReferenceRequestObject(this));
-
+            throw new NotImplementedException();
         }
     }
 }

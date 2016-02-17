@@ -14,6 +14,10 @@ if(isset($cmd) && strlen($cmd) > 0)
         case "push":
             break;
 
+        case "ping":
+            $response["success"] = true;
+            break;
+
         default:
             $response["error"] = "INVALID_CMD";
             break;

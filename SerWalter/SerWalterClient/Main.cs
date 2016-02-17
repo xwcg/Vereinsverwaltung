@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SerWalterClient
@@ -15,6 +8,30 @@ namespace SerWalterClient
         public Main()
         {
             InitializeComponent();
+        }
+
+        protected override void OnShown(EventArgs e)
+        {
+            base.OnShown(e);
+
+            if (Network.Request.ServiceAddress == null)
+            {
+                using (ServerConnect connectDialog = new ServerConnect())
+                {
+                    if (connectDialog.ShowDialog() == DialogResult.OK)
+                    {
+                        InitializeData();
+                    }
+                    else
+                    {
+                        this.Close();
+                    }
+                }
+            }
+        }
+
+        private void InitializeData()
+        {
         }
     }
 }

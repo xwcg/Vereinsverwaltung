@@ -11,7 +11,7 @@ namespace Data
 	using System.Linq;
 	using System.Text;
 
-	public class Member : DBObject, DBObject
+	public class Member : DBObject
 	{
 		public virtual string first_name
 		{
