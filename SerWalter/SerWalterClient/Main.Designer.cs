@@ -31,10 +31,12 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabMembers = new System.Windows.Forms.TabPage();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.buttonMemberInvoice = new System.Windows.Forms.Button();
             this.buttonMemberAdd = new System.Windows.Forms.Button();
             this.panelMemberDetails = new System.Windows.Forms.Panel();
+            this.filedIsSepa = new System.Windows.Forms.CheckBox();
             this.buttonBankChoose = new System.Windows.Forms.Button();
             this.fieldJobType = new System.Windows.Forms.ComboBox();
             this.fieldJobName = new System.Windows.Forms.TextBox();
@@ -61,17 +63,15 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tabFinance = new System.Windows.Forms.TabPage();
-            this.filedIsSepa = new System.Windows.Forms.CheckBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tabControl1.SuspendLayout();
             this.tabMembers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panelMemberDetails.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -115,6 +115,18 @@
             this.splitContainer1.Size = new System.Drawing.Size(1129, 672);
             this.splitContainer1.SplitterDistance = 739;
             this.splitContainer1.TabIndex = 0;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 31);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.Size = new System.Drawing.Size(739, 641);
+            this.dataGridView1.TabIndex = 1;
             // 
             // panel1
             // 
@@ -175,10 +187,21 @@
             this.panelMemberDetails.Controls.Add(this.label7);
             this.panelMemberDetails.Controls.Add(this.label1);
             this.panelMemberDetails.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelMemberDetails.Enabled = false;
             this.panelMemberDetails.Location = new System.Drawing.Point(0, 0);
             this.panelMemberDetails.Name = "panelMemberDetails";
             this.panelMemberDetails.Size = new System.Drawing.Size(386, 672);
             this.panelMemberDetails.TabIndex = 0;
+            // 
+            // filedIsSepa
+            // 
+            this.filedIsSepa.AutoSize = true;
+            this.filedIsSepa.Location = new System.Drawing.Point(8, 516);
+            this.filedIsSepa.Name = "filedIsSepa";
+            this.filedIsSepa.Size = new System.Drawing.Size(74, 17);
+            this.filedIsSepa.TabIndex = 25;
+            this.filedIsSepa.Text = "Lastschrift";
+            this.filedIsSepa.UseVisualStyleBackColor = true;
             // 
             // buttonBankChoose
             // 
@@ -405,28 +428,6 @@
             this.tabFinance.Text = "Finanzen";
             this.tabFinance.UseVisualStyleBackColor = true;
             // 
-            // filedIsSepa
-            // 
-            this.filedIsSepa.AutoSize = true;
-            this.filedIsSepa.Location = new System.Drawing.Point(8, 516);
-            this.filedIsSepa.Name = "filedIsSepa";
-            this.filedIsSepa.Size = new System.Drawing.Size(74, 17);
-            this.filedIsSepa.TabIndex = 25;
-            this.filedIsSepa.Text = "Lastschrift";
-            this.filedIsSepa.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 31);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(739, 641);
-            this.dataGridView1.TabIndex = 1;
-            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -441,10 +442,10 @@
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panelMemberDetails.ResumeLayout(false);
             this.panelMemberDetails.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }

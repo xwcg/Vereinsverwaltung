@@ -68,28 +68,7 @@ class Database
     {
         if($this->is_connected)
         {
-            if($this->debug_stack === true)
-            {
-                $stack = debug_backtrace();
-                for($i = 0; $i < count($stack); $i++)
-                {
-                    $name = $stack[$i]["function"];
-                    $args = $stack[$i]["args"];
-
-                    for($k = 0; $k < count($args); $k++)
-                    {
-                        $args[$k] = json_encode( $args[$k] );
-                    }
-
-                    $stack[$i] = ["name" => $name, "args" => $args];
-                }
-
-                $this->queries[] = ["sql" => $query, "stack" => $stack];
-            }
-            else
-            {
-                $this->queries[] = $query;
-            }
+            $this->queries[] = $query;
 
             $result = $this->db->query($query);
 
@@ -278,6 +257,18 @@ class DatabaseQueries
         }
 
         return false;
+    }
+
+    public function Members_Pull()
+    {
+        $query = H::FormatArr("SELECT * FROM {PREFIX}{TABLE}",
+            [
+                "PREFIX" => DBPREFIX,
+                "TABLE" => TABLE_MEMBERS
+            ]);
+
+        $result = Globals::$db->Query($query);
+        return $this->Unspool($result, null, []);
     }
 
     public function Member_Add($data)

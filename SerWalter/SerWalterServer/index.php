@@ -14,6 +14,20 @@ if(isset($cmd) && strlen($cmd) > 0)
         case "push":
             break;
 
+        case "pull":
+            switch($data)
+            {
+                case "members":
+                    $response["members"] = Globals::$query->Members_Pull();
+                    $response["success"] = true;
+                    break;
+
+                default:
+                    $response["error"] = "INVALID_PULL";
+                    break;
+            }
+            break;
+
         case "ping":
             $response["success"] = true;
             break;
@@ -24,7 +38,7 @@ if(isset($cmd) && strlen($cmd) > 0)
     }
 }
 
-$response["debug-post"] = $_POST;
+//$response["debug-post"] = $_POST;
 
 ob_clean();
 echo json_encode($response);

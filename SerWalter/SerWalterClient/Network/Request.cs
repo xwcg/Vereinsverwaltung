@@ -18,8 +18,8 @@ namespace SerWalterClient.Network
         public static string Send(string cmd, string data)
         {
             NameValueCollection postData = new NameValueCollection();
-            postData.Add("cmd", cmd);
-            postData.Add("data", data);
+            postData["cmd"] = cmd;
+            postData["data"] = data;
 
             return sendRequest(postData);
         }
@@ -30,7 +30,7 @@ namespace SerWalterClient.Network
             {
                 using (WebClient client = new WebClient())
                 {
-                    byte[] response = client.UploadValues(string.Format("http://{0}", ServiceAddress), postData);
+                    byte[] response = client.UploadValues(string.Format("http://{0}/index.php", ServiceAddress), postData);
 
                     return Encoding.Default.GetString(response);
                 }

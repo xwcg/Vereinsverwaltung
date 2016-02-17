@@ -31,5 +31,20 @@ namespace SerWalterClient
             catch (Exception ex)
             { }
         }
+
+        private void fieldIp_KeyPress(object sender, KeyPressEventArgs e)
+        {
+        }
+
+        private void fieldIp_KeyUp(object sender, KeyEventArgs e)
+        {
+
+        }
+
+        private void fieldIp_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                buttonConnect.PerformClick();
+        }
     }
 }

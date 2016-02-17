@@ -51,6 +51,9 @@
             this.fieldIp.Size = new System.Drawing.Size(327, 20);
             this.fieldIp.TabIndex = 1;
             this.fieldIp.Text = "192.168.0.22/walter";
+            this.fieldIp.KeyDown += new System.Windows.Forms.KeyEventHandler(this.fieldIp_KeyDown);
+            this.fieldIp.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.fieldIp_KeyPress);
+            this.fieldIp.KeyUp += new System.Windows.Forms.KeyEventHandler(this.fieldIp_KeyUp);
             // 
             // buttonConnect
             // 
