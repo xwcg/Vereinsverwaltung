@@ -6,6 +6,7 @@
 //------------------------------------------------------------------------------
 namespace SerWalterClient.Data
 {
+    using Newtonsoft.Json;
     using System;
 
     public class Member : DBObject
@@ -78,7 +79,8 @@ namespace SerWalterClient.Data
 
         public virtual Invoice CreateInvoice()
         {
-            throw new System.NotImplementedException();
+            this.lastPushResponse = Network.Request.Send("invoice", new Network.ReferenceRequestObject(this));
+
         }
     }
 }

@@ -17,7 +17,7 @@ namespace SerWalterClient.Data
             set;
         }
 
-        public virtual object objectType
+        public virtual string objectType
         {
             get
             {
@@ -34,7 +34,7 @@ namespace SerWalterClient.Data
 
         public virtual bool Push()
         {
-            lastPushResponse = Network.Request.Send("push", JsonConvert.SerializeObject(this));
+            lastPushResponse = Network.Request.Send("push", this);
             try
             {
                 Network.SimplifiedResponse simpleResponse = JsonConvert.DeserializeObject<Network.SimplifiedResponse>(lastPushResponse);

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using Newtonsoft.Json;
+using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Net;
 using System.Text;
@@ -8,6 +9,11 @@ namespace SerWalterClient.Network
     internal class Request
     {
         public static string ServiceAddress;
+
+        public static string Send(string cmd, object data)
+        {
+            return Send(cmd, JsonConvert.SerializeObject(data));
+        }
 
         public static string Send(string cmd, string data)
         {
