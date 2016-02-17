@@ -19,6 +19,16 @@ if(isset($cmd) && strlen($cmd) > 0)
             $response["success"] = true;
             break;
 
+        case "pull/modifiers":
+            $response["modifiers"] = Globals::$query->Modifiers_Pull();
+            $response["success"] = true;
+            break;
+
+        case "pull/jobs":
+            $response["jobs"] = Globals::$query->Jobs_Pull();
+            $response["success"] = true;
+            break;
+
         case "ping":
             $response["success"] = true;
             break;

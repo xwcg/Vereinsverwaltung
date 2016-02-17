@@ -36,7 +36,7 @@
             this.buttonMemberInvoice = new System.Windows.Forms.Button();
             this.buttonMemberAdd = new System.Windows.Forms.Button();
             this.panelMemberDetails = new System.Windows.Forms.Panel();
-            this.filedIsSepa = new System.Windows.Forms.CheckBox();
+            this.fieldIsSepa = new System.Windows.Forms.CheckBox();
             this.buttonBankChoose = new System.Windows.Forms.Button();
             this.fieldJobType = new System.Windows.Forms.ComboBox();
             this.fieldJobName = new System.Windows.Forms.TextBox();
@@ -123,10 +123,12 @@
             this.dataGridMembers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridMembers.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridMembers.Location = new System.Drawing.Point(0, 31);
+            this.dataGridMembers.MultiSelect = false;
             this.dataGridMembers.Name = "dataGridMembers";
-            this.dataGridMembers.ReadOnly = true;
+            this.dataGridMembers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridMembers.Size = new System.Drawing.Size(739, 641);
             this.dataGridMembers.TabIndex = 1;
+            this.dataGridMembers.SelectionChanged += new System.EventHandler(this.dataGridMembers_SelectionChanged);
             // 
             // panel1
             // 
@@ -157,10 +159,11 @@
             this.buttonMemberAdd.TabIndex = 0;
             this.buttonMemberAdd.Text = "Neues Mitglied";
             this.buttonMemberAdd.UseVisualStyleBackColor = true;
+            this.buttonMemberAdd.Click += new System.EventHandler(this.buttonMemberAdd_Click);
             // 
             // panelMemberDetails
             // 
-            this.panelMemberDetails.Controls.Add(this.filedIsSepa);
+            this.panelMemberDetails.Controls.Add(this.fieldIsSepa);
             this.panelMemberDetails.Controls.Add(this.buttonBankChoose);
             this.panelMemberDetails.Controls.Add(this.fieldJobType);
             this.panelMemberDetails.Controls.Add(this.fieldJobName);
@@ -193,15 +196,15 @@
             this.panelMemberDetails.Size = new System.Drawing.Size(386, 672);
             this.panelMemberDetails.TabIndex = 0;
             // 
-            // filedIsSepa
+            // fieldIsSepa
             // 
-            this.filedIsSepa.AutoSize = true;
-            this.filedIsSepa.Location = new System.Drawing.Point(8, 516);
-            this.filedIsSepa.Name = "filedIsSepa";
-            this.filedIsSepa.Size = new System.Drawing.Size(74, 17);
-            this.filedIsSepa.TabIndex = 25;
-            this.filedIsSepa.Text = "Lastschrift";
-            this.filedIsSepa.UseVisualStyleBackColor = true;
+            this.fieldIsSepa.AutoSize = true;
+            this.fieldIsSepa.Location = new System.Drawing.Point(8, 516);
+            this.fieldIsSepa.Name = "fieldIsSepa";
+            this.fieldIsSepa.Size = new System.Drawing.Size(74, 17);
+            this.fieldIsSepa.TabIndex = 25;
+            this.fieldIsSepa.Text = "Lastschrift";
+            this.fieldIsSepa.UseVisualStyleBackColor = true;
             // 
             // buttonBankChoose
             // 
@@ -485,7 +488,7 @@
         private System.Windows.Forms.Button buttonBankChoose;
         private System.Windows.Forms.TextBox fieldBankAccountInfo;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.CheckBox filedIsSepa;
+        private System.Windows.Forms.CheckBox fieldIsSepa;
         private System.Windows.Forms.DataGridView dataGridMembers;
     }
 }

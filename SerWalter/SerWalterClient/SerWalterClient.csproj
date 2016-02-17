@@ -52,6 +52,7 @@
   <ItemGroup>
     <Compile Include="Data\BankAccount.cs" />
     <Compile Include="Data\CostModifier.cs" />
+    <Compile Include="Data\DBBoolean.cs" />
     <Compile Include="Data\DBObject.cs" />
     <Compile Include="Data\Invoice.cs" />
     <Compile Include="Data\Job.cs" />

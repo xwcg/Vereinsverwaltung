@@ -259,6 +259,32 @@ class DatabaseQueries
         return false;
     }
 
+
+    public function Modifiers_Pull()
+    {
+        $query = H::FormatArr("SELECT * FROM {PREFIX}{TABLE}",
+            [
+                "PREFIX" => DBPREFIX,
+                "TABLE" => TABLE_MODIFIERS
+            ]);
+
+        $result = Globals::$db->Query($query);
+        return $this->Unspool($result, null, []);
+    }
+
+    public function Jobs_Pull()
+    {
+        $query = H::FormatArr("SELECT * FROM {PREFIX}{TABLE}",
+            [
+                "PREFIX" => DBPREFIX,
+                "TABLE" => TABLE_JOBS
+            ]);
+
+        $result = Globals::$db->Query($query);
+        return $this->Unspool($result, null, []);
+    }
+
+
     public function Members_Pull()
     {
         $query = H::FormatArr("SELECT * FROM {PREFIX}{TABLE}",

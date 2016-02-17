@@ -14,7 +14,7 @@ namespace SerWalterClient.Network
         public static List<Member> GetMembers()
         {
             MembersResponse response = JsonConvert.DeserializeObject<MembersResponse>(Send("pull/members", null));
-            return response.members;            
+            return response == null ? null : response.members;
         }
 
         public static string Send(string cmd, object data)

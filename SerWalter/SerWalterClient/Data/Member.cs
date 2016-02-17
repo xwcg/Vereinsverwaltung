@@ -25,11 +25,13 @@ namespace SerWalterClient.Data
             set;
         }
 
+        private DateTime _dob = DateTime.Now;
+
         [DisplayName("Geburtstag")]
         public virtual DateTime dob
         {
-            get;
-            set;
+            get { return _dob; }
+            set { _dob = value; }
         }
 
         [DisplayName("Straße")]
@@ -68,20 +70,21 @@ namespace SerWalterClient.Data
         }
 
         [Browsable(false)]
-        public virtual Job job_type
+        public virtual int job_type
         {
             get;
             set;
         }
 
         [Browsable(false)]
-        public virtual BankAccount bank_account
+        public virtual int bank_account
         {
             get;
             set;
         }
 
         [DisplayName("Zahlt per Lastschrift")]
+        [JsonConverter(typeof(DBBoolean))]
         public virtual bool bank_is_sepa
         {
             get;
