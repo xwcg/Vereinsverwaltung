@@ -107,6 +107,7 @@ namespace SerWalterClient
                 if (MessageBox.Show("Änderungen Speichern?", this.Text, MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     selectedMember.Push();
+                    selectedMemberHasPendingChanges = false;
                     ReloadMembers();
                 }
             }

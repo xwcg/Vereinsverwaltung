@@ -41,6 +41,8 @@ if(isset($cmd) && strlen($cmd) > 0)
 }
 
 //$response["debug-post"] = $_POST;
+$response["debug-db-errors"] = Globals::$db->errors;
+$response["debug-db-queries"] = Globals::$db->queries;
 
 ob_clean();
 echo json_encode($response);
