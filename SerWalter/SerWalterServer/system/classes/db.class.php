@@ -285,8 +285,8 @@ class DatabaseQueries
                 "is_fee" => 0
                 ];
 
-            $fixedModifier = $modifiers["age_modifier"]["modifierFixed"] + $modifiers["job_modifier"]["modifierFixed"];
-            $percentageModifier = $modifiers["age_modifier"]["modifierPercent"] + $modifiers["job_modifier"]["modifierPercent"];
+            $fixedModifier = $modifiers[$invoiceData["age_modifier"]]["modifierFixed"] + $modifiers[$invoiceData["job_modifier"]]["modifierFixed"];
+            $percentageModifier = $modifiers[$invoiceData["age_modifier"]]["modifierPercent"] + $modifiers[$invoiceData["job_modifier"]]["modifierPercent"];
 
             $cost = (MEMBERSHIP_COST + $fixedModifier);
             $cost = $cost - ($cost * ($percentageModifier / 100.0));
