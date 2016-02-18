@@ -334,7 +334,10 @@ class DatabaseQueries
         {
             case "Member":
                 $tableName = TABLE_MEMBERS;
-                break; 
+                break;
+            case "BankAccount":
+                $tableName = TABLE_BANKS;
+                break;
         }
 
         if($tableName !== null)
