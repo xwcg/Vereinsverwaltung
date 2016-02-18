@@ -25,7 +25,7 @@ namespace SerWalterClient.Data
         {
             get
             {
-                return this.GetType().ToString().Replace("SerWalterClient.Data", "");
+                return this.GetType().ToString().Replace("SerWalterClient.Data.", "");
             }
         }
 

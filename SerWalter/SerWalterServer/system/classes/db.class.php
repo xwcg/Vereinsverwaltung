@@ -297,6 +297,18 @@ class DatabaseQueries
         return $this->Unspool($result, null, []);
     }
 
+    public function Banks_Pull()
+    {
+        $query = H::FormatArr("SELECT * FROM {PREFIX}{TABLE}",
+            [
+                "PREFIX" => DBPREFIX,
+                "TABLE" => TABLE_BANKS
+            ]);
+
+        $result = Globals::$db->Query($query);
+        return $this->Unspool($result, null, []);
+    }
+
     private function FilterData($data, $ignoreFields)
     {
         $outData = [];

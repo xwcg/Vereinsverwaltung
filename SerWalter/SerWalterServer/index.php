@@ -30,6 +30,11 @@ if(isset($cmd) && strlen($cmd) > 0)
             $response["success"] = true;
             break;
 
+        case "pull/banks":
+            $response["banks"] = Globals::$query->Banks_Pull();
+            $response["success"] = true;
+            break;
+
         case "ping":
             $response["success"] = true;
             break;

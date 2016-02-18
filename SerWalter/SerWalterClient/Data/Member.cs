@@ -28,6 +28,7 @@ namespace SerWalterClient.Data
         private DateTime _dob = DateTime.Now;
 
         [DisplayName("Geburtstag")]
+        [JsonConverter(typeof(DBDateTime))]
         public virtual DateTime dob
         {
             get { return _dob; }
