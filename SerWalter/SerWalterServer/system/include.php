@@ -13,6 +13,8 @@ define("DBNAME", "verein");
 define("DBPREFIX", "");
 
 define("MEMBERSHIP_COST", 30.00);
+define("AGE_MODIFIER_ADULT", 4);
+define("AGE_MODIFIER_CHILD", 3);
 
 //[SETTINGS:END]
 

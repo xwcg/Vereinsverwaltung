@@ -221,7 +221,7 @@ class DatabaseQueries
     #endregion
 
     private function Check_JobType($id)
-    {   
+    {
         $query = H::FormatArr("SELECT * FROM {PREFIX}{TABLE} WHERE id = '{ID}' LIMIT 1",
             [
                 "PREFIX" => DBPREFIX,
@@ -231,7 +231,7 @@ class DatabaseQueries
 
         $result = Globals::$db->Query($query);
         $rows = $this->Unspool($result, null, []);
-       
+
         return count($rows) > 0;
     }
 
@@ -259,6 +259,80 @@ class DatabaseQueries
         return false;
     }
 
+    private function GetAge($member)
+    {
+        $birthyear = split("-", $member["dob"])[0];
+        $currentyear = date("Y", time());
+
+        return $currentyear - $birthyear;
+    }
+    
+    public function DoInvoices($invoicees)
+    {
+        $modifiers = $this->Modifiers_PullInternal();
+        $members = $this->Members_PullInternal();
+        $jobs = $this->Jobs_PullInternal();
+
+        foreach($invoicees as $id)
+        {
+            $invoiceData = [
+                "member_id" => $id,
+                "age_modifier" => $this->GetAge($members[$id]) <= 16 ? AGE_MODIFIER_CHILD : AGE_MODIFIER_ADULT,
+                "job_modifier" => $jobs[$members[$id]["job_type"]]["modifier"],
+                "date" => date("Y-m-d H:i:s", time()),
+                "calculated_cost" => 0.0,
+                "paid_cost" => 0.0,
+                "is_fee" => 0
+                ];
+
+            $fixedModifier = $modifiers["age_modifier"]["modifierFixed"] + $modifiers["job_modifier"]["modifierFixed"];
+            $percentageModifier = $modifiers["age_modifier"]["modifierPercent"] + $modifiers["job_modifier"]["modifierPercent"];
+
+            $cost = (MEMBERSHIP_COST + $fixedModifier);
+            $cost = $cost - ($cost * ($percentageModifier / 100.0));
+
+            $invoiceData["calculated_cost"] = $cost;
+
+            $query = $this->BuildInsert(TABLE_INVOICES, $invoiceData);
+            Globals::$db->Query($query);
+        }
+
+        return true;
+    }
+
+    private function Members_PullInternal()
+    {
+        $query = H::FormatArr("SELECT * FROM {PREFIX}{TABLE}",
+            [
+                "PREFIX" => DBPREFIX,
+                "TABLE" => TABLE_MEMBERS
+            ]);
+
+        $result = Globals::$db->Query($query);
+        return $this->Unspool($result, "id", []);
+    }
+    private function Modifiers_PullInternal()
+    {
+        $query = H::FormatArr("SELECT * FROM {PREFIX}{TABLE}",
+            [
+                "PREFIX" => DBPREFIX,
+                "TABLE" => TABLE_MODIFIERS
+            ]);
+
+        $result = Globals::$db->Query($query);
+        return $this->Unspool($result, "id", []);
+    }
+    public function Jobs_PullInternal()
+    {
+        $query = H::FormatArr("SELECT * FROM {PREFIX}{TABLE}",
+            [
+                "PREFIX" => DBPREFIX,
+                "TABLE" => TABLE_JOBS
+            ]);
+
+        $result = Globals::$db->Query($query);
+        return $this->Unspool($result, "id", []);
+    }
 
     public function Modifiers_Pull()
     {
@@ -362,7 +436,7 @@ class DatabaseQueries
             {
                 $query = $this->BuildUpdate($tableName, $filteredData, [ ["KEY" => "id", "COMPARISON" => "=", "TARGET" => $data["id"] ] ]);
             }
-                
+
             $result = Globals::$db->Query($query);
             if(!Globals::$db->IsError($result))
             {

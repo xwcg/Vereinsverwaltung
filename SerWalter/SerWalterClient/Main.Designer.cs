@@ -63,10 +63,11 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tabFinance = new System.Windows.Forms.TabPage();
-            this.buttonCreateBilanz = new System.Windows.Forms.Button();
-            this.label14 = new System.Windows.Forms.Label();
-            this.fieldSum = new System.Windows.Forms.TextBox();
             this.dataGridInvoices = new System.Windows.Forms.DataGridView();
+            this.fieldSum = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.buttonCreateBilanz = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabMembers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -156,6 +157,7 @@
             this.buttonMemberInvoice.TabIndex = 1;
             this.buttonMemberInvoice.Text = "Rechnung für ausgewählte erstellen";
             this.buttonMemberInvoice.UseVisualStyleBackColor = true;
+            this.buttonMemberInvoice.Click += new System.EventHandler(this.buttonMemberInvoice_Click);
             // 
             // buttonMemberAdd
             // 
@@ -441,6 +443,7 @@
             // 
             // tabFinance
             // 
+            this.tabFinance.Controls.Add(this.button1);
             this.tabFinance.Controls.Add(this.dataGridInvoices);
             this.tabFinance.Controls.Add(this.fieldSum);
             this.tabFinance.Controls.Add(this.label14);
@@ -453,14 +456,28 @@
             this.tabFinance.Text = "Finanzen";
             this.tabFinance.UseVisualStyleBackColor = true;
             // 
-            // buttonCreateBilanz
+            // dataGridInvoices
             // 
-            this.buttonCreateBilanz.Location = new System.Drawing.Point(6, 6);
-            this.buttonCreateBilanz.Name = "buttonCreateBilanz";
-            this.buttonCreateBilanz.Size = new System.Drawing.Size(192, 23);
-            this.buttonCreateBilanz.TabIndex = 0;
-            this.buttonCreateBilanz.Text = "Jahresbilanz erstellen";
-            this.buttonCreateBilanz.UseVisualStyleBackColor = true;
+            this.dataGridInvoices.AllowUserToAddRows = false;
+            this.dataGridInvoices.AllowUserToDeleteRows = false;
+            this.dataGridInvoices.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridInvoices.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridInvoices.Location = new System.Drawing.Point(11, 94);
+            this.dataGridInvoices.Name = "dataGridInvoices";
+            this.dataGridInvoices.ReadOnly = true;
+            this.dataGridInvoices.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridInvoices.Size = new System.Drawing.Size(1116, 576);
+            this.dataGridInvoices.TabIndex = 3;
+            // 
+            // fieldSum
+            // 
+            this.fieldSum.Location = new System.Drawing.Point(56, 51);
+            this.fieldSum.Name = "fieldSum";
+            this.fieldSum.ReadOnly = true;
+            this.fieldSum.Size = new System.Drawing.Size(181, 20);
+            this.fieldSum.TabIndex = 2;
             // 
             // label14
             // 
@@ -471,24 +488,25 @@
             this.label14.TabIndex = 1;
             this.label14.Text = "Summe";
             // 
-            // fieldSum
+            // buttonCreateBilanz
             // 
-            this.fieldSum.Location = new System.Drawing.Point(56, 51);
-            this.fieldSum.Name = "fieldSum";
-            this.fieldSum.ReadOnly = true;
-            this.fieldSum.Size = new System.Drawing.Size(181, 20);
-            this.fieldSum.TabIndex = 2;
+            this.buttonCreateBilanz.Location = new System.Drawing.Point(6, 6);
+            this.buttonCreateBilanz.Name = "buttonCreateBilanz";
+            this.buttonCreateBilanz.Size = new System.Drawing.Size(192, 23);
+            this.buttonCreateBilanz.TabIndex = 0;
+            this.buttonCreateBilanz.Text = "Jahresbilanz erstellen";
+            this.buttonCreateBilanz.UseVisualStyleBackColor = true;
+            this.buttonCreateBilanz.Click += new System.EventHandler(this.buttonCreateBilanz_Click);
             // 
-            // dataGridInvoices
+            // button1
             // 
-            this.dataGridInvoices.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridInvoices.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridInvoices.Location = new System.Drawing.Point(11, 94);
-            this.dataGridInvoices.Name = "dataGridInvoices";
-            this.dataGridInvoices.Size = new System.Drawing.Size(1116, 576);
-            this.dataGridInvoices.TabIndex = 3;
+            this.button1.Location = new System.Drawing.Point(204, 6);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "Aktualisieren";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Main
             // 
@@ -556,6 +574,7 @@
         private System.Windows.Forms.TextBox fieldSum;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.DataGridView dataGridInvoices;
+        private System.Windows.Forms.Button button1;
     }
 }
 

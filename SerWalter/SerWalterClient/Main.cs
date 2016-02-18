@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Globalization;
+using System.IO;
 using System.Windows.Forms;
 
 namespace SerWalterClient
@@ -75,13 +76,13 @@ namespace SerWalterClient
             decimal debt = 0.0m;
             decimal paid = 0.0m;
 
-            foreach(Invoice invoice in invoices)
+            foreach (Invoice invoice in invoices)
             {
                 debt += invoice.calculated_cost;
                 paid += invoice.paid_cost;
             }
 
-            fieldSum.Text = (paid-debt).ToString("C", CultureInfo.GetCultureInfo("de-DE"));
+            fieldSum.Text = (paid - debt).ToString("C", CultureInfo.GetCultureInfo("de-DE"));
         }
 
         private void ReloadMembers()
@@ -325,6 +326,73 @@ namespace SerWalterClient
                 selectedMemberHasPendingChanges = false;
                 ReloadMembers();
             }
+        }
+
+        private void buttonCreateBilanz_Click(object sender, EventArgs e)
+        {
+            string bilanzText = "Jahresbilanz für " + DateTime.Now.Year + "\n\r\n\r";
+            bilanzText += "Mitglied\t\tSoll\t\tHaben\t\tDifferenz\n\r";
+            bilanzText += "========\t\t====\t\t=====\t\t=========\n\r\n\r";
+
+            CultureInfo deCulture = CultureInfo.GetCultureInfo("de-DE");
+            decimal debt = 0.0m;
+            decimal paid = 0.0m;
+
+            foreach (Invoice i in invoices)
+            {
+                if (i.date.Year == DateTime.Now.Year)
+                {
+                    bilanzText += String.Format("{0}\t\t{1}\t\t{2}\t\t{3}\n\r",
+                        findMember(i.member).ToString(),
+                        i.calculated_cost.ToString("C", deCulture),
+                        i.paid_cost.ToString("C", deCulture),
+                        (i.paid_cost - i.calculated_cost).ToString("C", deCulture)
+                        );
+
+                    debt += i.calculated_cost;
+                    paid += i.paid_cost;
+                }
+            }
+            bilanzText += "========\t\t====\t\t=====\t\t=========\n\r";
+            bilanzText += String.Format("        \t\t    \t\tSumme\t\t{0}", (paid - debt).ToString("C", deCulture));
+
+            using (SaveFileDialog dialog = new SaveFileDialog())
+            {
+                dialog.Filter = "Textdatei (*.txt)|*.txt";
+                if(dialog.ShowDialog() == DialogResult.OK)
+                {
+                    using (StreamWriter w = new StreamWriter(dialog.FileName))
+                    {
+                        w.Write(bilanzText);
+                        w.Flush();
+                        w.Close();
+                    }
+
+                    MessageBox.Show("OK!");
+                }
+            }
+        }
+
+        private void buttonMemberInvoice_Click(object sender, EventArgs e)
+        {
+            if (dataGridMembers.SelectedRows.Count > 0)
+            {
+                List<int> invoiceIds = new List<int>();
+
+                for (int i = 0; i < dataGridMembers.SelectedRows.Count; i++)
+                {
+                    invoiceIds.Add(((Member)dataGridMembers.SelectedRows[i].DataBoundItem).id);
+                }
+
+                Network.Request.Send("invoice", invoiceIds);
+                ReloadInvoices();
+                tabControl1.SelectedIndex = 1;
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ReloadInvoices();
         }
     }
 }

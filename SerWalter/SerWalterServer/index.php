@@ -15,6 +15,10 @@ if(isset($cmd) && strlen($cmd) > 0)
             $response["success"] = Globals::$query->Push($data);
             break;
 
+        case "invoice":
+            $response["success"] = Globals::$query->DoInvoices($data);
+            break;
+
         case "pull/members":
             $response["members"] = Globals::$query->Members_Pull();
             $response["success"] = true;

@@ -100,7 +100,7 @@ namespace SerWalterClient.Data
 
         public override string ToString()
         {
-            return String.Format("[{0}] {1} {2}", this.id, this.first_name, this.last_name);
+            return String.Format("{1} {2}", this.id, this.first_name, this.last_name);
         }
     }
 }
