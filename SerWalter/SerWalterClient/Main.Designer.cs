@@ -205,6 +205,7 @@
             this.fieldIsSepa.TabIndex = 25;
             this.fieldIsSepa.Text = "Lastschrift";
             this.fieldIsSepa.UseVisualStyleBackColor = true;
+            this.fieldIsSepa.CheckedChanged += new System.EventHandler(this.fieldIsSepa_CheckedChanged);
             // 
             // buttonBankChoose
             // 
@@ -216,6 +217,7 @@
             this.buttonBankChoose.TabIndex = 24;
             this.buttonBankChoose.Text = "Wählen";
             this.buttonBankChoose.UseVisualStyleBackColor = true;
+            this.buttonBankChoose.Click += new System.EventHandler(this.buttonBankChoose_Click);
             // 
             // fieldJobType
             // 
@@ -224,6 +226,7 @@
             this.fieldJobType.Name = "fieldJobType";
             this.fieldJobType.Size = new System.Drawing.Size(183, 21);
             this.fieldJobType.TabIndex = 10;
+            this.fieldJobType.SelectedIndexChanged += new System.EventHandler(this.fieldJobType_SelectedIndexChanged);
             // 
             // fieldJobName
             // 
@@ -231,6 +234,7 @@
             this.fieldJobName.Name = "fieldJobName";
             this.fieldJobName.Size = new System.Drawing.Size(183, 20);
             this.fieldJobName.TabIndex = 8;
+            this.fieldJobName.TextChanged += new System.EventHandler(this.fieldJobName_TextChanged);
             // 
             // fieldDateOfBirth
             // 
@@ -238,6 +242,7 @@
             this.fieldDateOfBirth.Name = "fieldDateOfBirth";
             this.fieldDateOfBirth.Size = new System.Drawing.Size(183, 20);
             this.fieldDateOfBirth.TabIndex = 6;
+            this.fieldDateOfBirth.ValueChanged += new System.EventHandler(this.fieldDateOfBirth_ValueChanged);
             // 
             // fieldLastName
             // 
@@ -247,6 +252,7 @@
             this.fieldLastName.Name = "fieldLastName";
             this.fieldLastName.Size = new System.Drawing.Size(183, 20);
             this.fieldLastName.TabIndex = 4;
+            this.fieldLastName.TextChanged += new System.EventHandler(this.fieldLastName_TextChanged);
             // 
             // fieldCountry
             // 
@@ -254,6 +260,7 @@
             this.fieldCountry.Name = "fieldCountry";
             this.fieldCountry.Size = new System.Drawing.Size(183, 20);
             this.fieldCountry.TabIndex = 20;
+            this.fieldCountry.TextChanged += new System.EventHandler(this.fieldCountry_TextChanged);
             // 
             // fieldCity
             // 
@@ -261,6 +268,7 @@
             this.fieldCity.Name = "fieldCity";
             this.fieldCity.Size = new System.Drawing.Size(183, 20);
             this.fieldCity.TabIndex = 18;
+            this.fieldCity.TextChanged += new System.EventHandler(this.fieldCity_TextChanged);
             // 
             // fieldZipCode
             // 
@@ -268,6 +276,7 @@
             this.fieldZipCode.Name = "fieldZipCode";
             this.fieldZipCode.Size = new System.Drawing.Size(183, 20);
             this.fieldZipCode.TabIndex = 15;
+            this.fieldZipCode.TextChanged += new System.EventHandler(this.fieldZipCode_TextChanged);
             // 
             // fieldBankAccountInfo
             // 
@@ -283,6 +292,7 @@
             this.fieldStreet.Name = "fieldStreet";
             this.fieldStreet.Size = new System.Drawing.Size(183, 20);
             this.fieldStreet.TabIndex = 13;
+            this.fieldStreet.TextChanged += new System.EventHandler(this.fieldStreet_TextChanged);
             // 
             // fieldFirstName
             // 
@@ -290,6 +300,7 @@
             this.fieldFirstName.Name = "fieldFirstName";
             this.fieldFirstName.Size = new System.Drawing.Size(183, 20);
             this.fieldFirstName.TabIndex = 2;
+            this.fieldFirstName.TextChanged += new System.EventHandler(this.fieldFirstName_TextChanged);
             // 
             // label3
             // 

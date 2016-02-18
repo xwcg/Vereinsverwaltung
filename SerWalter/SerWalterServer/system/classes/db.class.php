@@ -297,34 +297,53 @@ class DatabaseQueries
         return $this->Unspool($result, null, []);
     }
 
-    public function Member_Add($data)
+    private function FilterData($data, $ignoreFields)
     {
-        /*
-         * first_name
-         * last_name
-         * dob
-         * street
-         * zipcode
-         * city
-         * country
-         * job_name
-         * job_type
-         * bank_account
-         * bank_is_sepa
-         */
-        if(!isset($data["first_name"]) || !isset($data["last_name"]) || !isset($data["dob"]) || !isset($data["street"])
-        || !isset($data["zipcode"]) || !isset($data["city"]) || !isset($data["country"]) || !isset($data["job_name"])
-        || !isset($data["job_type"]))
-            return "MISSING_MEMBER_DATA";
+        $outData = [];
 
-        if($this->Check_JobType($data["job_type"]))
+        foreach($data as $key => $value)
         {
+            if(in_array($key, $ignoreFields))
+                continue;
 
+            $outData[$key] = $value;
         }
-        else
+
+        return $outData;
+    }
+
+    public function Push($data)
+    {
+        $ignoreFields = ["id", "objectType"];
+        $filteredData = $this->FilterData($data, $ignoreFields);
+
+        $tableName = null;
+        switch($data["objectType"])
         {
-            return "INVALID_JOB_TYPE";
+            case "Member":
+                $tableName = TABLE_MEMBERS;
+                break; 
         }
+
+        if($tableName !== null)
+        {
+            if($data["id"] == -1)
+            {
+                $query = $this->BuildInsert($tableName, $filteredData);
+            }
+            else
+            {
+                $query = $this->BuildUpdate($tableName, $filteredData, [ ["KEY" => "id", "COMPARISON" => "=", "TARGET" => $data["id"] ]);
+            }
+                
+            $result = Globals::$db->Query($query);
+            if(!Globals::$db->IsError($result))
+            {
+                return Globals::$db->GetAffectedRows() > 0;
+            }
+        }
+
+        return false;
     }
 }
 

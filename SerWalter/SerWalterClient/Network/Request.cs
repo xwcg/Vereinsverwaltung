@@ -16,6 +16,16 @@ namespace SerWalterClient.Network
             MembersResponse response = JsonConvert.DeserializeObject<MembersResponse>(Send("pull/members", null));
             return response == null ? null : response.members;
         }
+        public static List<CostModifier> GetModifiers()
+        {
+            ModifiersResponse response = JsonConvert.DeserializeObject<ModifiersResponse>(Send("pull/modifiers", null));
+            return response == null ? null : response.modifiers;
+        }
+        public static List<Job> GetJobs()
+        {
+            JobsResponse response = JsonConvert.DeserializeObject<JobsResponse>(Send("pull/jobs", null));
+            return response == null ? null : response.jobs;
+        }
 
         public static string Send(string cmd, object data)
         {

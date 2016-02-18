@@ -13,7 +13,7 @@ namespace SerWalterClient.Data
 
 	public class Job : DBObject
 	{
-		public virtual CostModifier modifier
+		public virtual int modifier
 		{
 			get;
 			set;
@@ -25,6 +25,10 @@ namespace SerWalterClient.Data
 			set;
 		}
 
-	}
+        public override string ToString()
+        {
+            return name;
+        }
+    }
 }
 

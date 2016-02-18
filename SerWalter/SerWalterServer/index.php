@@ -12,6 +12,7 @@ if(isset($cmd) && strlen($cmd) > 0)
     switch($cmd)
     {
         case "push":
+            $response["success"] = Globals::$query->Push($data);
             break;
 
         case "pull/members":
