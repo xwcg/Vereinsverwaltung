@@ -14,6 +14,7 @@ namespace SerWalterClient
         private List<CostModifier> modifiers;
         private List<Job> jobs;
         private List<BankAccount> banks;
+        private BindingList<Invoice> bound_invoices;
         private List<Invoice> invoices;
         private bool ignoreEvents = false;
 
@@ -83,6 +84,9 @@ namespace SerWalterClient
             }
 
             fieldSum.Text = (paid - debt).ToString("C", CultureInfo.GetCultureInfo("de-DE"));
+
+            bound_invoices = new BindingList<Invoice>(invoices);
+            dataGridInvoices.DataSource = bound_invoices;
         }
 
         private void ReloadMembers()
@@ -343,7 +347,7 @@ namespace SerWalterClient
                 if (i.date.Year == DateTime.Now.Year)
                 {
                     bilanzText += String.Format("{0}\t\t{1}\t\t{2}\t\t{3}\n\r",
-                        findMember(i.member).ToString(),
+                        findMember(i.member_id).ToString(),
                         i.calculated_cost.ToString("C", deCulture),
                         i.paid_cost.ToString("C", deCulture),
                         (i.paid_cost - i.calculated_cost).ToString("C", deCulture)

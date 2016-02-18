@@ -13,7 +13,7 @@ namespace SerWalterClient.Data
     public class Invoice : DBObject
     {
         [DisplayName("Mitglied")]
-        public virtual int member
+        public virtual int member_id
         {
             get;
             set;
