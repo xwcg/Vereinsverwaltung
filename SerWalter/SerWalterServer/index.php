@@ -35,6 +35,11 @@ if(isset($cmd) && strlen($cmd) > 0)
             $response["success"] = true;
             break;
 
+        case "pull/invoices":
+            $response["invoices"] = Globals::$query->Invoices_Pull();
+            $response["success"] = true;
+            break;
+
         case "ping":
             $response["success"] = true;
             break;

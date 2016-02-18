@@ -26,6 +26,16 @@ namespace SerWalterClient.Network
             JobsResponse response = JsonConvert.DeserializeObject<JobsResponse>(Send("pull/jobs", null));
             return response == null ? null : response.jobs;
         }
+        public static List<BankAccount> GetBanks()
+        {
+            BanksResponse response = JsonConvert.DeserializeObject<BanksResponse>(Send("pull/banks", null));
+            return response == null ? null : response.banks;
+        }
+        public static List<Invoice> GetInvoices()
+        {
+            InvoiceResponse response = JsonConvert.DeserializeObject<InvoiceResponse>(Send("pull/invoices", null));
+            return response == null ? null : response.invoices;
+        }
 
         public static string Send(string cmd, object data)
         {

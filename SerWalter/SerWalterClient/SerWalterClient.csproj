@@ -50,6 +50,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BankCreate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BankCreate.Designer.cs">
+      <DependentUpon>BankCreate.cs</DependentUpon>
+    </Compile>
     <Compile Include="BankSelect.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,6 +79,7 @@
     </Compile>
     <Compile Include="Network\JobsResponse.cs" />
     <Compile Include="Network\BanksResponse.cs" />
+    <Compile Include="Network\InvoiceResponse.cs" />
     <Compile Include="Network\ModifierResponse.cs" />
     <Compile Include="Network\MembersResponse.cs" />
     <Compile Include="Network\ReferenceRequestObject.cs" />
@@ -86,6 +93,9 @@
     <Compile Include="ServerConnect.Designer.cs">
       <DependentUpon>ServerConnect.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="BankCreate.resx">
+      <DependentUpon>BankCreate.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BankSelect.resx">
       <DependentUpon>BankSelect.cs</DependentUpon>
     </EmbeddedResource>

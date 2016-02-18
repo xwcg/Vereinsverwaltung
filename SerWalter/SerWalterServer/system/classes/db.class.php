@@ -272,6 +272,18 @@ class DatabaseQueries
         return $this->Unspool($result, null, []);
     }
 
+    public function Invoices_Pull()
+    {
+        $query = H::FormatArr("SELECT * FROM {PREFIX}{TABLE}",
+            [
+                "PREFIX" => DBPREFIX,
+                "TABLE" => TABLE_INVOICES
+            ]);
+
+        $result = Globals::$db->Query($query);
+        return $this->Unspool($result, null, []);
+    }
+
     public function Jobs_Pull()
     {
         $query = H::FormatArr("SELECT * FROM {PREFIX}{TABLE}",

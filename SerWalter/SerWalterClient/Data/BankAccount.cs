@@ -6,37 +6,41 @@
 //------------------------------------------------------------------------------
 namespace SerWalterClient.Data
 {
-	using System;
-	using System.Collections.Generic;
-	using System.Linq;
-	using System.Text;
+    using System.ComponentModel;
 
-	public class BankAccount : DBObject
-	{
-		public virtual string iban
-		{
-			get;
-			set;
-		}
+    public class BankAccount : DBObject
+    {
+        [DisplayName("IBAN")]
+        public virtual string iban
+        {
+            get;
+            set;
+        }
 
-		public virtual string bic
-		{
-			get;
-			set;
-		}
+        [DisplayName("BIC/SWIFT")]
+        public virtual string bic
+        {
+            get;
+            set;
+        }
 
-		public virtual string institute_name
-		{
-			get;
-			set;
-		}
+        [DisplayName("Bankname")]
+        public virtual string institute_name
+        {
+            get;
+            set;
+        }
 
-		public virtual string holder_name
-		{
-			get;
-			set;
-		}
+        [DisplayName("Kontoinhaber")]
+        public virtual string holder_name
+        {
+            get;
+            set;
+        }
 
-	}
+        public override string ToString()
+        {
+            return string.Format("{0} - {1} - {2}", holder_name, institute_name, iban);
+        }
+    }
 }
-

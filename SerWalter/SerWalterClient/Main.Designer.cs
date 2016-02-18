@@ -63,6 +63,10 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tabFinance = new System.Windows.Forms.TabPage();
+            this.buttonCreateBilanz = new System.Windows.Forms.Button();
+            this.label14 = new System.Windows.Forms.Label();
+            this.fieldSum = new System.Windows.Forms.TextBox();
+            this.dataGridInvoices = new System.Windows.Forms.DataGridView();
             this.tabControl1.SuspendLayout();
             this.tabMembers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -72,6 +76,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridMembers)).BeginInit();
             this.panel1.SuspendLayout();
             this.panelMemberDetails.SuspendLayout();
+            this.tabFinance.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridInvoices)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -123,8 +129,8 @@
             this.dataGridMembers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridMembers.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridMembers.Location = new System.Drawing.Point(0, 31);
-            this.dataGridMembers.MultiSelect = false;
             this.dataGridMembers.Name = "dataGridMembers";
+            this.dataGridMembers.ReadOnly = true;
             this.dataGridMembers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridMembers.Size = new System.Drawing.Size(739, 641);
             this.dataGridMembers.TabIndex = 1;
@@ -401,6 +407,7 @@
             this.buttonMemberSave.TabIndex = 0;
             this.buttonMemberSave.Text = "Speichern";
             this.buttonMemberSave.UseVisualStyleBackColor = false;
+            this.buttonMemberSave.Click += new System.EventHandler(this.buttonMemberSave_Click);
             // 
             // label12
             // 
@@ -434,6 +441,10 @@
             // 
             // tabFinance
             // 
+            this.tabFinance.Controls.Add(this.dataGridInvoices);
+            this.tabFinance.Controls.Add(this.fieldSum);
+            this.tabFinance.Controls.Add(this.label14);
+            this.tabFinance.Controls.Add(this.buttonCreateBilanz);
             this.tabFinance.Location = new System.Drawing.Point(4, 36);
             this.tabFinance.Name = "tabFinance";
             this.tabFinance.Padding = new System.Windows.Forms.Padding(3);
@@ -441,6 +452,43 @@
             this.tabFinance.TabIndex = 1;
             this.tabFinance.Text = "Finanzen";
             this.tabFinance.UseVisualStyleBackColor = true;
+            // 
+            // buttonCreateBilanz
+            // 
+            this.buttonCreateBilanz.Location = new System.Drawing.Point(6, 6);
+            this.buttonCreateBilanz.Name = "buttonCreateBilanz";
+            this.buttonCreateBilanz.Size = new System.Drawing.Size(192, 23);
+            this.buttonCreateBilanz.TabIndex = 0;
+            this.buttonCreateBilanz.Text = "Jahresbilanz erstellen";
+            this.buttonCreateBilanz.UseVisualStyleBackColor = true;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(8, 54);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(42, 13);
+            this.label14.TabIndex = 1;
+            this.label14.Text = "Summe";
+            // 
+            // fieldSum
+            // 
+            this.fieldSum.Location = new System.Drawing.Point(56, 51);
+            this.fieldSum.Name = "fieldSum";
+            this.fieldSum.ReadOnly = true;
+            this.fieldSum.Size = new System.Drawing.Size(181, 20);
+            this.fieldSum.TabIndex = 2;
+            // 
+            // dataGridInvoices
+            // 
+            this.dataGridInvoices.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridInvoices.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridInvoices.Location = new System.Drawing.Point(11, 94);
+            this.dataGridInvoices.Name = "dataGridInvoices";
+            this.dataGridInvoices.Size = new System.Drawing.Size(1116, 576);
+            this.dataGridInvoices.TabIndex = 3;
             // 
             // Main
             // 
@@ -460,6 +508,9 @@
             this.panel1.ResumeLayout(false);
             this.panelMemberDetails.ResumeLayout(false);
             this.panelMemberDetails.PerformLayout();
+            this.tabFinance.ResumeLayout(false);
+            this.tabFinance.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridInvoices)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -501,6 +552,10 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.CheckBox fieldIsSepa;
         private System.Windows.Forms.DataGridView dataGridMembers;
+        private System.Windows.Forms.Button buttonCreateBilanz;
+        private System.Windows.Forms.TextBox fieldSum;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.DataGridView dataGridInvoices;
     }
 }
 

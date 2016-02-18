@@ -6,60 +6,66 @@
 //------------------------------------------------------------------------------
 namespace SerWalterClient.Data
 {
-	using System;
-	using System.Collections.Generic;
-	using System.Linq;
-	using System.Text;
+    using Newtonsoft.Json;
+    using System;
+    using System.ComponentModel;
 
-	public class Invoice : DBObject
-	{
-		public virtual Member member
-		{
-			get;
-			set;
-		}
+    public class Invoice : DBObject
+    {
+        [DisplayName("Mitglied")]
+        public virtual int member
+        {
+            get;
+            set;
+        }
 
-		public virtual CostModifier age_modifier
-		{
-			get;
-			set;
-		}
+        [Browsable(false)]
+        public virtual int age_modifier
+        {
+            get;
+            set;
+        }
 
-		public virtual CostModifier job_modifier
-		{
-			get;
-			set;
-		}
+        [Browsable(false)]
+        public virtual int job_modifier
+        {
+            get;
+            set;
+        }
 
-		public virtual DateTime date
-		{
-			get;
-			set;
-		}
+        [JsonConverter(typeof(DBDateTime))]
+        [DisplayName("Datum")]
+        public virtual DateTime date
+        {
+            get;
+            set;
+        }
 
-		public virtual Decimal calculated_cost
-		{
-			get;
-			set;
-		}
+        [DisplayName("Betrag")]
+        public virtual Decimal calculated_cost
+        {
+            get;
+            set;
+        }
 
-		public virtual Decimal paid_cost
-		{
-			get;
-			set;
-		}
+        [DisplayName("Beglichen")]
+        public virtual Decimal paid_cost
+        {
+            get;
+            set;
+        }
 
-		public virtual bool is_fee
-		{
-			get;
-			set;
-		}
+        [DisplayName("Ist Gebühr")]
+        [JsonConverter(typeof(DBBoolean))]
+        public virtual bool is_fee
+        {
+            get;
+            set;
+        }
 
-		public virtual void Pay(Payment payment)
-		{
-			throw new System.NotImplementedException();
-		}
-
-	}
+        public virtual void Pay(Payment payment)
+        {
+            throw new System.NotImplementedException();
+        }
+    }
 }
-

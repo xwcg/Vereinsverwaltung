@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Globalization;
 using System.Windows.Forms;
 
 namespace SerWalterClient
@@ -11,6 +12,8 @@ namespace SerWalterClient
         private BindingList<Member> members;
         private List<CostModifier> modifiers;
         private List<Job> jobs;
+        private List<BankAccount> banks;
+        private List<Invoice> invoices;
         private bool ignoreEvents = false;
 
         public Main()
@@ -26,7 +29,7 @@ namespace SerWalterClient
             {
                 using (ServerConnect connectDialog = new ServerConnect())
                 {
-                    if (connectDialog.ShowDialog() == DialogResult.OK)
+                    if (connectDialog.ShowDialog(this) == DialogResult.OK)
                     {
                         InitializeData();
                     }
@@ -40,6 +43,8 @@ namespace SerWalterClient
 
         private void InitializeData()
         {
+            ReloadBanks();
+
             modifiers = Network.Request.GetModifiers();
             if (modifiers == null)
                 modifiers = new List<CostModifier>();
@@ -52,6 +57,31 @@ namespace SerWalterClient
                 fieldJobType.Items.Add(job);
 
             ReloadMembers();
+            ReloadInvoices();
+        }
+
+        private void ReloadBanks()
+        {
+            banks = Network.Request.GetBanks();
+            if (banks == null)
+                banks = new List<BankAccount>();
+        }
+        private void ReloadInvoices()
+        {
+            invoices = Network.Request.GetInvoices();
+            if (invoices == null)
+                invoices = new List<Invoice>();
+
+            decimal debt = 0.0m;
+            decimal paid = 0.0m;
+
+            foreach(Invoice invoice in invoices)
+            {
+                debt += invoice.calculated_cost;
+                paid += invoice.paid_cost;
+            }
+
+            fieldSum.Text = (paid-debt).ToString("C", CultureInfo.GetCultureInfo("de-DE"));
         }
 
         private void ReloadMembers()
@@ -84,6 +114,24 @@ namespace SerWalterClient
 
             return null;
         }
+        private BankAccount findBank(int id)
+        {
+            if (banks != null)
+                foreach (BankAccount bank in banks)
+                    if (bank.id == id)
+                        return bank;
+
+            return null;
+        }
+        private Member findMember(int id)
+        {
+            if (members != null)
+                foreach (Member member in members)
+                    if (member.id == id)
+                        return member;
+
+            return null;
+        }
 
         private void dataGridMembers_SelectionChanged(object sender, EventArgs e)
         {
@@ -102,7 +150,7 @@ namespace SerWalterClient
 
         private void DetailsPopulate(Member member)
         {
-            if(selectedMemberHasPendingChanges)
+            if (selectedMemberHasPendingChanges)
             {
                 if (MessageBox.Show("Änderungen Speichern?", this.Text, MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
@@ -138,7 +186,7 @@ namespace SerWalterClient
                 fieldZipCode.Text = member.zipcode;
                 fieldCity.Text = member.city;
                 fieldCountry.Text = member.country;
-                fieldBankAccountInfo.Text = member.bank_account.ToString();
+                fieldBankAccountInfo.Text = findBank(member.bank_account) == null ? "" : findBank(member.bank_account).ToString();
                 fieldIsSepa.Checked = member.bank_is_sepa;
             }
 
@@ -246,7 +294,18 @@ namespace SerWalterClient
 
         private void buttonBankChoose_Click(object sender, EventArgs e)
         {
+            if (ignoreEvents) return;
+            using (BankSelect selecter = new BankSelect())
+            {
+                if (selecter.ShowDialog(this) == DialogResult.OK)
+                {
+                    selectedMember.bank_account = selecter.SelectedAccount.id;
+                    ReloadBanks();
+                    fieldBankAccountInfo.Text = findBank(selectedMember.bank_account).ToString();
 
+                    selectedMemberHasPendingChanges = true;
+                }
+            }
         }
 
         private void fieldIsSepa_CheckedChanged(object sender, EventArgs e)
@@ -256,6 +315,16 @@ namespace SerWalterClient
             selectedMember.bank_is_sepa = fieldIsSepa.Checked;
 
             selectedMemberHasPendingChanges = true;
+        }
+
+        private void buttonMemberSave_Click(object sender, EventArgs e)
+        {
+            if (selectedMember != null)
+            {
+                selectedMember.Push();
+                selectedMemberHasPendingChanges = false;
+                ReloadMembers();
+            }
         }
     }
 }
