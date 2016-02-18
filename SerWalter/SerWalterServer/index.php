@@ -3,7 +3,7 @@
 require_once("system/include.php");
 
 $cmd = $_POST["cmd"];
-$data = json_decode($_POST["data"]);
+$data = (array)json_decode($_POST["data"]);
 
 $response = [ "success" => false ];
 
