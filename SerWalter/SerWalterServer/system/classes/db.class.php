@@ -333,7 +333,7 @@ class DatabaseQueries
             }
             else
             {
-                $query = $this->BuildUpdate($tableName, $filteredData, [ ["KEY" => "id", "COMPARISON" => "=", "TARGET" => $data["id"] ]);
+                $query = $this->BuildUpdate($tableName, $filteredData, [ ["KEY" => "id", "COMPARISON" => "=", "TARGET" => $data["id"] ] ]);
             }
                 
             $result = Globals::$db->Query($query);
