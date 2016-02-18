@@ -183,6 +183,8 @@ class DatabaseQueries
 
             if(is_string($value))
                 $valueStr = "'" . $this->Escape($value) . "'";
+            else if($value == null)
+                $valueStr = "null";
 
             $values_bits[] = H::Format("{0} = {1}", $key, $valueStr);
         }
